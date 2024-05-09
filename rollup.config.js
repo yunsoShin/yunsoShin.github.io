@@ -13,7 +13,7 @@ function build(filename) {
     output: {
       file: `${DIST_DEFAULT}/${filename}.min.js`,
       format: 'iife',
-      name: 'Chirpy',
+      name: '신윤수',
       sourcemap: !isProd
     },
     watch: {
