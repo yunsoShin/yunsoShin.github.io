@@ -2,9 +2,9 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://localhost:4000/</id>
-  <title>Chirpy</title>
+  <title>신윤수</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-09T10:33:38+08:00</updated>
+  <updated>2024-05-09T10:57:23+08:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>http://localhost:4000/</uri>
