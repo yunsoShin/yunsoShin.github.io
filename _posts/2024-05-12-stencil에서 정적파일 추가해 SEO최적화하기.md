@@ -82,4 +82,9 @@ Vercel을 사용하여 Stencil 프로젝트를 배포하는 과정은 다음과 
 위의 vercel.json 설정을 통해 각 파일에 적절한 Content-Type 헤더를 설정하고, 캐시 제어를 위한 Cache-Control 헤더를 추가하여 SEO를 최적화할 수 있습니다.
 
 결론
-이 글에서는 Stencil과 Vercel을 사용하여 RSS, sitemap, 및 robots.txt 파일을 관리하고 SEO를 개선하는 방법을 알아보았습니다. 이 설정들은 검색 엔진에서 더 나은 순위를 얻는 데 도움이 됩니다.
+이 글에서는 Stencil과 Vercel을 사용하여 RSS, sitemap, 및 robots.txt 파일을 관리하고 SEO를 개선하는 방법을 알아보았습니다.
+위의 SEO적용에서의 시행착오가 많았습니다. 프로젝트 루트에 해당파일을 위치시켜서 빌드하면 정적자산들이 제대로 빌드되지않는 현상을 겪었습니다.
+stencil에서의 정적자산들에 대한 기본위치는 리액트에서의 public처럼 assets에 위치해 있으며 vercel에서의 설정은 해당 assets가 빌드되고 최종적으로
+deploy되는 폴더인 www/assets/설정 및 저장한 폴더의 정적자산 PATH로 설정을 해줘야합니다.
+
+이 설정은 정적자산을 바탕으로 포스팅되었지만 해당 정적자산들을 동적으로 바꿔준다 하더라도 유효합니다.
