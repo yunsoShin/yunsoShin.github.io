@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>신윤수</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-10T11:12:16+08:00</updated>
+  <updated>2024-05-12T19:42:49+08:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,51 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Stencil에서 정적 파일을 이용한 SEO 최적화: RSS, Sitemap, Robots.txt 설정하기</title>
+    <link href="http://localhost:4000/posts/stencil%EC%97%90%EC%84%9C-%EC%A0%95%EC%A0%81%ED%8C%8C%EC%9D%BC-%EC%B6%94%EA%B0%80%ED%95%B4-SEO%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Stencil에서 정적 파일을 이용한 SEO 최적화: RSS, Sitemap, Robots.txt 설정하기" />
+    <published>2024-05-12T00:00:00+08:00</published>
+  
+    <updated>2024-05-12T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/stencil%EC%97%90%EC%84%9C-%EC%A0%95%EC%A0%81%ED%8C%8C%EC%9D%BC-%EC%B6%94%EA%B0%80%ED%95%B4-SEO%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0/</id>
+    <content src="http://localhost:4000/posts/stencil%EC%97%90%EC%84%9C-%EC%A0%95%EC%A0%81%ED%8C%8C%EC%9D%BC-%EC%B6%94%EA%B0%80%ED%95%B4-SEO%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0/" />
+    <author>
+      <name>your_full_name</name>
+    </author>
+
+  
+    
+    <category term="web-development" />
+    
+    <category term="seo" />
+    
+    <category term="stencil" />
+    
+    <category term="vercel" />
+    
+  
+
+  <summary>도입부
+
+이 포스트에서는 Stencil 프로젝트에서 SEO를 향상시키기 위해 RSS, sitemap, 및 robots.txt 파일을 정적 파일로 추가하고, 이를 Vercel을 통해 배포하는 과정을 소개하려고 합니다.
+
+배경
+
+웹 개발에서 검색 엔진 최적화(SEO)는 매우 중요합니다. 효과적인 SEO 설정을 통해 검색 엔진에서 더 높은 순위를 얻고, 이로 인해 웹사이트의 트래픽과 가시성이 증가할 수 있습니다.
+
+Stencil 프로젝트 설정
+
+Stencil은 웹 컴포넌트를 빌드하기 위한 도구이며, 다음과 같이 프로젝트를 설정합니다.
+
+
+  assets 디렉토리에 SEO 관련 파일을 저장합니다.
+  기본적으로 stencil읭 빌드 경로 www/assets/ 파일들이 해당 위치에 저장됩니다.
+  SEO폴더안의...</summary>
+
+  </entry>
 
   
   <entry>
