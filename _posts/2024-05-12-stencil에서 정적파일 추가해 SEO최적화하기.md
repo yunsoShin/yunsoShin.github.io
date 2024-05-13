@@ -2,10 +2,10 @@
 layout: post
 title: "Stencil에서 정적 파일을 이용한 SEO 최적화: RSS, Sitemap, Robots.txt 설정하기"
 date: 2024-05-12
-categories: [web-development, seo, stencil, vercel, troubleshooting, deploy]
+categories: [web-development, seo, stencil, vercel, deploy]
 ---
 
-## 도입부
+## 개요
 
 이 포스트에서는 Stencil 프로젝트에서 SEO를 향상시키기 위해 RSS, sitemap, 및 robots.txt 파일을 정적 파일로 추가하고, 이를 Vercel을 통해 배포하는 과정을 소개하려고 합니다.
 

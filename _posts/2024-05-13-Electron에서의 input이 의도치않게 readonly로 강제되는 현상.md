@@ -6,7 +6,7 @@ categories: [Electron, troubleshooting]
 description: "Electron 애플리케이션에서 alert 함수 사용시 발생하는 input 필드의 읽기 전용 문제 해결 방법을 알아봅니다."
 ---
 
-## 문제 발생 상황
+## 개요
 
 Electron 애플리케이션에서 `alert()` 함수를 사용할 때, input 태그가 읽기 전용으로 설정되는 현상이 종종 발생합니다. 이 현상은 Electron의 구조적 특성 때문에 나타나는 문제로, 이해를 돕기 위해 문제의 원인과 해결 방안을 상세히 설명하겠습니다.
 

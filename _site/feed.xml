@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>신윤수</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-13T19:55:01+08:00</updated>
+  <updated>2024-05-13T19:59:32+08:00</updated>
   <author>
     <name>your_full_name</name>
     <uri>http://localhost:4000/</uri>
@@ -68,13 +68,11 @@
     
     <category term="vercel" />
     
-    <category term="troubleshooting" />
-    
     <category term="deploy" />
     
   
 
-  <summary>도입부
+  <summary>개요
 
 이 포스트에서는 Stencil 프로젝트에서 SEO를 향상시키기 위해 RSS, sitemap, 및 robots.txt 파일을 정적 파일로 추가하고, 이를 Vercel을 통해 배포하는 과정을 소개하려고 합니다.
 
@@ -89,7 +87,7 @@ Stencil은 웹 컴포넌트를 빌드하기 위한 도구이며, 다음과 같�
 
   assets 디렉토리에 SEO 관련 파일을 저장합니다.
   기본적으로 stencil읭 빌드 경로 www/assets/ 파일들이 해당 위치에 저장됩니다.
-  SEO폴더안의...</summary>
+  SEO폴더안의 ...</summary>
 
   </entry>
 
