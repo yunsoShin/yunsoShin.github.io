@@ -2,7 +2,7 @@
 layout: post
 title: "Stencil에서 정적 파일을 이용한 SEO 최적화: RSS, Sitemap, Robots.txt 설정하기"
 date: 2024-05-12
-categories: web-development seo stencil vercel
+categories: [web-development, seo, stencil, vercel, troubleshooting, deploy]
 ---
 
 ## 도입부
