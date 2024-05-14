@@ -30,23 +30,24 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="seo" />
+<meta property="og:title" content="Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<link rel="canonical" href="http://localhost:4000/categories/seo/" />
-<meta property="og:url" content="http://localhost:4000/categories/seo/" />
+<meta name="description" content="Docker 소개" />
+<meta property="og:description" content="Docker 소개" />
+<link rel="canonical" href="http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/" />
+<meta property="og:url" content="http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/" />
 <meta property="og:site_name" content="신윤수" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-05-14T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="seo" />
+<meta property="twitter:title" content="Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드" />
 <meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"seo","url":"http://localhost:4000/categories/seo/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-14T00:00:00+08:00","datePublished":"2024-05-14T00:00:00+08:00","description":"Docker 소개","headline":"Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/"},"url":"http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>seo | 신윤수
+  <title>Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드 | 신윤수
   </title>
 
   <!--
@@ -108,9 +109,16 @@
   <!-- 3rd-party Dependencies -->
 
   
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.25.0/dist/tocbot.min.css">
   
 
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- JavaScript -->
@@ -419,14 +427,10 @@
           
         
           
-            <span>
-              <a href="/categories/">Categories</a>
-            </span>
-          
         
           
             
-              <span>seo</span>
+              <span>Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드</span>
             
 
           
@@ -440,7 +444,7 @@
     </button>
 
     <div id="topbar-title">
-      Category
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link">
@@ -466,28 +470,179 @@
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-              
+              <!-- Refactor the HTML structure -->
+
+
+
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
 
 
 
 <article class="px-1">
-  
+  <header>
+    <h1 data-toc-skip>Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드</h1>
     
 
-
-
-<div id="page-category">
-  <h1 class="ps-lg-2">
-    <i class="far fa-folder-open fa-fw text-muted"></i>
-    seo
-    <span class="lead text-muted ps-2">1</span>
-  </h1>
-
-  <ul class="content ps-0">
-    
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/posts/stencil%EC%97%90%EC%84%9C-%EC%A0%95%EC%A0%81%ED%8C%8C%EC%9D%BC-%EC%B6%94%EA%B0%80%ED%95%B4-SEO%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0/">Stencil에서 정적 파일을 이용한 SEO 최적화: RSS, Sitemap, Robots.txt 설정하기</a>
-        <span class="dash flex-grow-1"></span>
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -498,22 +653,222 @@
 
 <time
   
-    class="text-muted small text-nowrap"
-  
-  data-ts="1715443200"
+  data-ts="1715616000"
   data-df="ll"
   
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
 >
-  May 12, 2024
+  May 14, 2024
 </time>
 
-      </li>
+      </span>
+
+      <!-- lastmod date -->
+      
+
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              
+                
+                
+              
+            
+          </em>
+        </span>
+
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="1007 words"
+>
+  <em>5 min</em> read</span>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="content">
+    <h1 id="docker-소개">Docker 소개</h1>
+
+<p>Docker는 개발자들이 어디에서나 일관된 환경에서 애플리케이션을 실행할 수 있도록 컨테이너라는 형태로 소프트웨어를 패키징할 수 있는 플랫폼으로, 소프트웨어 개발에 혁명을 일으켰습니다. 이 글에서는 Docker가 등장한 배경, 그리고 컨테이너, 이미지, 볼륨, 빌드 프로세스 같은 주요 개념을 탐구하고, 이러한 개념들이 어떻게 효율적이고 예측 가능한 소프트웨어 배포에 기여하는지 살펴보겠습니다.</p>
+
+<h2 id="docker의-등장"><span class="me-2">Docker의 등장</span><a href="#docker의-등장" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Docker는 2013년에 도입되어, 서로 다른 컴퓨팅 환경에서 소프트웨어를 신뢰성 있게 구성하는 복잡성에 대응하였습니다. 컨테이너 기술을 활용하여 기반 인프라에 관계없이 코드가 동일하게 실행될 수 있도록 함으로써 개발, 테스트 및 배포 워크플로우를 단순화했습니다.</p>
+
+<h2 id="주요-docker-개념-이해"><span class="me-2">주요 Docker 개념 이해</span><a href="#주요-docker-개념-이해" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="컨테이너"><span class="me-2">컨테이너</span><a href="#컨테이너" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>컨테이너</strong>는 코드, 런타임, 라이브러리 및 시스템 설정을 포함하여 애플리케이션 실행에 필요한 모든 것이 포함된 경량의 실행 가능한 패키지입니다. Docker 이미지를 기반으로 운영되며, 각 컨테이너는 서로 완전히 격리되어 있어 같은 호스트에서 실행되어도 서로 영향을 주지 않습니다. 컨테이너는 일시적인 상태를 가지며 실행 중일 때만 상태가 유지됩니다.</p>
+
+<h3 id="이미지"><span class="me-2">이미지</span><a href="#이미지" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>이미지</strong>는 컨테이너 실행에 필요한 파일과 설정이 포함된 불변의 스냅샷입니다. 컨테이너를 생성하는 데 사용되는 템플릿으로 생각할 수 있으며, 하나의 이미지에서 여러 컨테이너를 생성할 수 있습니다. 이미지는 대개 Dockerfile이라는 텍스트 문서를 통해 생성되며, 이 문서에는 컨테이너를 어떻게 구성할지에 대한 지시사항이 포함되어 있습니다.</p>
+
+<h3 id="볼륨"><span class="me-2">볼륨</span><a href="#볼륨" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>볼륨</strong>은 데이터를 컨테이너와 독립적으로 저장하고 관리할 수 있는 메커니즘입니다. 컨테이너는 일반적으로 불변하며 상태가 없지만, 볼륨을 사용하면 데이터를 영구적으로 저장하거나 여러 컨테이너 간에 공유할 수 있습니다. 볼륨은 호스트 시스템의 특정 부분에 데이터를 저장하며, 컨테이너가 삭제되어도 데이터는 유지됩니다.</p>
+
+<h3 id="빌드-프로세스"><span class="me-2">빌드 프로세스</span><a href="#빌드-프로세스" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p><strong>빌드 프로세스</strong>는 소스 코드로부터 Docker 이미지를 생성하는 과정입니다. Dockerfile에 정의된 지시사항을 순차적으로 실행하여 이미지의 새로운 계층을 추가하며, 이 계층들이 최종 이미지를 구성합니다. 이렇게 생성된 이미지는 재사용이 가능하며 다른 시스템에 쉽게 배포할 수 있습니다.</p>
+
+<h2 id="결론"><span class="me-2">결론</span><a href="#결론" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p>Docker의 컨테이너, 이미지, 볼륨, 빌드 프로세스를 이해하고 올바르게 사용하는 것은 소프트웨어 개발 주기를 향상시키는 데 필수적입니다. 이러한 구성 요소들은 모두 Docker 생태계 내에서 중요한 역할을 하며, 개발자들이 워크플로우를 간소화하고 환경에 관계없이 일관된 결과를 달성할 수 있도록 돕습니다.</p>
+
+<p>이 글이 여러분의 프로젝트에서 Docker의 힘을 활용하는 데 도움이 되기를 바랍니다!</p>
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
     
-  </ul>
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/%EA%B8%B0%EC%88%A0/">기술</a>,
+          <a href="/categories/docker/">docker</a>
+      </div>
+    
+
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/docker/"
+            class="post-tag no-text-decoration"
+          >docker</a>
+        
+          <a
+            href="/tags/%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/"
+            class="post-tag no-text-decoration"
+          >컨테이너</a>
+        
+          <a
+            href="/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80/"
+            class="post-tag no-text-decoration"
+          >이미지</a>
+        
+          <a
+            href="/tags/%EB%B3%BC%EB%A5%A8/"
+            class="post-tag no-text-decoration"
+          >볼륨</a>
+        
+          <a
+            href="/tags/%EB%B9%8C%EB%93%9C/"
+            class="post-tag no-text-decoration"
+          >빌드</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
+      
+
+      <a href="https://twitter.com/intent/tweet?text=Docker%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0:%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88,%20%EC%9D%B4%EB%AF%B8%EC%A7%80,%20%EB%B3%BC%EB%A5%A8,%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%B9%8C%EB%93%9C%20-%20%EC%8B%A0%EC%9C%A4%EC%88%98&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258F%2584%25EC%25BB%25A4%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+        <i class="fa-fw fa-brands fa-square-x-twitter"></i>
+      </a>
+    
+
+      
+
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Docker%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0:%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88,%20%EC%9D%B4%EB%AF%B8%EC%A7%80,%20%EB%B3%BC%EB%A5%A8,%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%B9%8C%EB%93%9C%20-%20%EC%8B%A0%EC%9C%A4%EC%88%98&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258F%2584%25EC%25BB%25A4%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+        <i class="fa-fw fab fa-facebook-square"></i>
+      </a>
+    
+
+      
+
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258F%2584%25EC%25BB%25A4%2F&text=Docker%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0:%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88,%20%EC%9D%B4%EB%AF%B8%EC%A7%80,%20%EB%B3%BC%EB%A5%A8,%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%B9%8C%EB%93%9C%20-%20%EC%8B%A0%EC%9C%A4%EC%88%98" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+        <i class="fa-fw fab fa-telegram"></i>
+      </a>
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
 </div>
 
-  
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
 </article>
+
 
             
           </main>
@@ -1037,12 +1392,95 @@
             </div>
 
             
+              
+              
+
+
+
+  <section id="toc-wrapper" class="d-none ps-0 pe-4">
+    <h2 class="panel-heading ps-3 mb-2">Contents</h2>
+    <nav id="toc"></nav>
+  </section>
+
+
+            
           </aside>
         </div>
 
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/Electron%EC%97%90%EC%84%9C%EC%9D%98-input%EC%9D%B4-%EC%9D%98%EB%8F%84%EC%B9%98%EC%95%8A%EA%B2%8C-readonly%EB%A1%9C-%EA%B0%95%EC%A0%9C%EB%90%98%EB%8A%94-%ED%98%84%EC%83%81/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Electron에서 alert 사용시 input 읽기 전용 문제 해결</p>
+    </a>
+  
+
+  
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
+  
+</nav>
+
+            
+              
+              <!-- The comments switcher -->
+
+
             
 
             <!-- The Footer -->
@@ -1602,6 +2040,13 @@
 
 
 
+  
+
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
 
 
 
@@ -1658,20 +2103,52 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script src="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js,npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.10/dayjs.min.js,npm/dayjs@1.11.10/locale/en.min.js,npm/dayjs@1.11.10/plugin/relativeTime.min.js,npm/dayjs@1.11.10/plugin/localizedFormat.min.js,npm/tocbot@4.25.0/dist/tocbot.min.js"></script>
 
 
 
 
 
 
-<script src="/assets/js/dist/misc.min.js"></script>
+<script src="/assets/js/dist/post.min.js"></script>
 
 
 
 <!-- Pageviews -->
+
+  
+
+  
 
 
 
