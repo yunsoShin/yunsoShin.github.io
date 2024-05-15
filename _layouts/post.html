@@ -52,7 +52,7 @@ tail_includes:
 
       <div class="d-flex justify-content-between">
         <!-- author(s) -->
-        <span>
+        <!-- <span>
           {% if page.author %}
             {% assign authors = page.author %}
           {% elsif page.authors %}
@@ -75,21 +75,21 @@ tail_includes:
               <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
             {% endif %}
           </em>
-        </span>
+        </span> -->
 
         <div>
           <!-- pageviews -->
-          {% if site.pageviews.provider and site.analytics[site.pageviews.provider].id %}
+          <!-- {% if site.pageviews.provider and site.analytics[site.pageviews.provider].id %} -->
             <span>
-              <em id="pageviews">
+              <!-- <em id="pageviews">
                 <i class="fas fa-spinner fa-spin small"></i>
-              </em>
-              {{ site.data.locales[lang].post.pageview_measure }}
+              </em> -->
+              <!-- {{ site.data.locales[lang].post.pageview_measure }} -->
             </span>
-          {% endif %}
+          <!-- {% endif %} -->
 
           <!-- read time -->
-          {% include read-time.html content=content prompt=true lang=lang %}
+          <!-- {% include read-time.html content=content prompt=true lang=lang %} -->
         </div>
       </div>
     </div>

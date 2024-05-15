@@ -4,7 +4,7 @@ title: "Docker 이해하기:arm환경에서 Docker로 python서버 구성하기"
 date: 2024-05-15
 categories: docker
 tags: docker
-author: yunsoo Shin
+authors: <yunsoo Shin>
 ---
 
 # Docker 소개
