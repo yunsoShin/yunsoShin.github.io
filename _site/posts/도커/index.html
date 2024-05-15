@@ -30,7 +30,8 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드" />
+<meta property="og:title" content="Docker 이해하기:arm환경에서 Docker로 python서버 구성하기" />
+<meta name="author" content="yunsoo Shin" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="Docker 소개" />
 <meta property="og:description" content="Docker 소개" />
@@ -38,16 +39,17 @@
 <meta property="og:url" content="http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/" />
 <meta property="og:site_name" content="신윤수" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-05-14T00:00:00+08:00" />
+<meta property="article:published_time" content="2024-05-15T00:00:00+08:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드" />
+<meta property="twitter:title" content="Docker 이해하기:arm환경에서 Docker로 python서버 구성하기" />
 <meta name="twitter:site" content="@twitter_username" />
+<meta name="twitter:creator" content="@yunsoo Shin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-14T00:00:00+08:00","datePublished":"2024-05-14T00:00:00+08:00","description":"Docker 소개","headline":"Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/"},"url":"http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"yunsoo Shin"},"dateModified":"2024-05-15T00:00:00+08:00","datePublished":"2024-05-15T00:00:00+08:00","description":"Docker 소개","headline":"Docker 이해하기:arm환경에서 Docker로 python서버 구성하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/"},"url":"http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드 | 신윤수
+  <title>Docker 이해하기:arm환경에서 Docker로 python서버 구성하기 | 신윤수
   </title>
 
   <!--
@@ -430,7 +432,7 @@
         
           
             
-              <span>Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드</span>
+              <span>Docker 이해하기:arm환경에서 Docker로 python서버 구성하기</span>
             
 
           
@@ -498,6 +500,87 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -553,6 +636,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -612,6 +717,72 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -619,6 +790,27 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -636,7 +828,7 @@
 
 <article class="px-1">
   <header>
-    <h1 data-toc-skip>Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드</h1>
+    <h1 data-toc-skip>Docker 이해하기:arm환경에서 Docker로 python서버 구성하기</h1>
     
 
     <div class="post-meta text-muted">
@@ -653,13 +845,13 @@
 
 <time
   
-  data-ts="1715616000"
+  data-ts="1715702400"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  May 14, 2024
+  May 15, 2024
 </time>
 
       </span>
@@ -711,9 +903,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1007 words"
+  title="1129 words"
 >
-  <em>5 min</em> read</span>
+  <em>6 min</em> read</span>
 
         </div>
       </div>
@@ -723,7 +915,8 @@
   <div class="content">
     <h1 id="docker-소개">Docker 소개</h1>
 
-<p>Docker는 개발자들이 어디에서나 일관된 환경에서 애플리케이션을 실행할 수 있도록 컨테이너라는 형태로 소프트웨어를 패키징할 수 있는 플랫폼으로, 소프트웨어 개발에 혁명을 일으켰습니다. 이 글에서는 Docker가 등장한 배경, 그리고 컨테이너, 이미지, 볼륨, 빌드 프로세스 같은 주요 개념을 탐구하고, 이러한 개념들이 어떻게 효율적이고 예측 가능한 소프트웨어 배포에 기여하는지 살펴보겠습니다.</p>
+<p>Docker는 개발자들이 어디에서나 일관된 환경에서 애플리케이션을 실행할 수 있도록 컨테이너라는 형태로 소프트웨어를 패키징할 수 있는 플랫폼으로, 소프트웨어 개발에 혁명을 일으켰습니다. 이 글에서는 Docker가 등장한 배경, 그리고 컨테이너, 이미지, 볼륨, 빌드 프로세스 같은 주요 개념을 탐구하고, 이러한 개념들이 어떻게 효율적이고 예측 가능한 소프트웨어 배포에 기여하는지 살펴보고 , ARM아키텍쳐로 구성된 로컬환경에서
+버전이 낮은 Python서버를 Docker로 구성하고 서버를 돌려봅니다..</p>
 
 <h2 id="docker의-등장"><span class="me-2">Docker의 등장</span><a href="#docker의-등장" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -747,11 +940,63 @@
 
 <p><strong>빌드 프로세스</strong>는 소스 코드로부터 Docker 이미지를 생성하는 과정입니다. Dockerfile에 정의된 지시사항을 순차적으로 실행하여 이미지의 새로운 계층을 추가하며, 이 계층들이 최종 이미지를 구성합니다. 이렇게 생성된 이미지는 재사용이 가능하며 다른 시스템에 쉽게 배포할 수 있습니다.</p>
 
-<h2 id="결론"><span class="me-2">결론</span><a href="#결론" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="docker-이미지-준비"><span class="me-2">Docker 이미지 준비</span><a href="#docker-이미지-준비" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Docker의 컨테이너, 이미지, 볼륨, 빌드 프로세스를 이해하고 올바르게 사용하는 것은 소프트웨어 개발 주기를 향상시키는 데 필수적입니다. 이러한 구성 요소들은 모두 Docker 생태계 내에서 중요한 역할을 하며, 개발자들이 워크플로우를 간소화하고 환경에 관계없이 일관된 결과를 달성할 수 있도록 돕습니다.</p>
+<p>이제 기본적인 도커의 개념에 대해 학습했다 믿고 python서버를 docker위에서 구동되는 방법에 대해 소개합니다.
+Docker를 사용하여 호환성 문제를 해결할 수 있는 Python 3.10 이미지를 준비합니다. <code class="language-plaintext highlighter-rouge">Dockerfile</code>을 작성하여 필요한 설정을 구성할 수 있습니다.</p>
 
-<p>이 글이 여러분의 프로젝트에서 Docker의 힘을 활용하는 데 도움이 되기를 바랍니다!</p>
+<h3 id="python-310-이미지를-기반으로-설정"><span class="me-2">Python 3.10 이미지를 기반으로 설정</span><a href="#python-310-이미지를-기반으로-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>FROM python:3.10</p>
+
+<h3 id="작업-디렉토리-설정"><span class="me-2">작업 디렉토리 설정</span><a href="#작업-디렉토리-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>WORKDIR /app</p>
+
+<h3 id="의존성-파일-복사"><span class="me-2">의존성 파일 복사</span><a href="#의존성-파일-복사" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>COPY requirements.txt .</p>
+
+<h3 id="의존성-설치"><span class="me-2">의존성 설치</span><a href="#의존성-설치" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<h4 id="requirementstxt에는-사용중인-라이브러리의-의존성들이-담겨져-있습니다"><span class="me-2">requirements.txt에는 사용중인 라이브러리의 의존성들이 담겨져 있습니다.</span><a href="#requirementstxt에는-사용중인-라이브러리의-의존성들이-담겨져-있습니다" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>RUN pip install -r requirements.txt
+</pre></td></tr></tbody></table></code></div></div>
+
+<h3 id="애플리케이션-코드-복사"><span class="me-2">애플리케이션 코드 복사</span><a href="#애플리케이션-코드-복사" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>COPY . .</p>
+
+<h3 id="서버-실행"><span class="me-2">서버 실행</span><a href="#서버-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>CMD ["python", "app.py"]
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="도커-이미지-빌드"><span class="me-2">도커 이미지 빌드</span><a href="#도커-이미지-빌드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>docker build -t my-python-app .
+</pre></td></tr></tbody></table></code></div></div>
+
+<h2 id="도커-컨테이너실행"><span class="me-2">도커 컨테이너실행</span><a href="#도커-컨테이너실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="code-header">
+        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>docker run -p 7077:7077 my-python-app
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>포트번호는 각자 REST API통신을 하기위해 합의된 번호를 사용합니다.
+<a href="https://chirpy-img.netlify.app/assets/img/post/20240515/dockerRun.jpg" class="popup img-link normal shimmer"><img src="https://chirpy-img.netlify.app/assets/img/post/20240515/dockerRun.jpg" alt="Desktop View"  loading="lazy"></a></p>
 
   </div>
 
@@ -761,7 +1006,6 @@
       <div class="post-meta mb-3">
         <i class="far fa-folder-open fa-fw me-1"></i>
         
-          <a href="/categories/%EA%B8%B0%EC%88%A0/">기술</a>,
           <a href="/categories/docker/">docker</a>
       </div>
     
@@ -775,26 +1019,6 @@
             href="/tags/docker/"
             class="post-tag no-text-decoration"
           >docker</a>
-        
-          <a
-            href="/tags/%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/"
-            class="post-tag no-text-decoration"
-          >컨테이너</a>
-        
-          <a
-            href="/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80/"
-            class="post-tag no-text-decoration"
-          >이미지</a>
-        
-          <a
-            href="/tags/%EB%B3%BC%EB%A5%A8/"
-            class="post-tag no-text-decoration"
-          >볼륨</a>
-        
-          <a
-            href="/tags/%EB%B9%8C%EB%93%9C/"
-            class="post-tag no-text-decoration"
-          >빌드</a>
         
       </div>
     
@@ -830,21 +1054,21 @@
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=Docker%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0:%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88,%20%EC%9D%B4%EB%AF%B8%EC%A7%80,%20%EB%B3%BC%EB%A5%A8,%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%B9%8C%EB%93%9C%20-%20%EC%8B%A0%EC%9C%A4%EC%88%98&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258F%2584%25EC%25BB%25A4%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=Docker%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0:arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%20Docker%EB%A1%9C%20python%EC%84%9C%EB%B2%84%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0%20-%20%EC%8B%A0%EC%9C%A4%EC%88%98&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258F%2584%25EC%25BB%25A4%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=Docker%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0:%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88,%20%EC%9D%B4%EB%AF%B8%EC%A7%80,%20%EB%B3%BC%EB%A5%A8,%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%B9%8C%EB%93%9C%20-%20%EC%8B%A0%EC%9C%A4%EC%88%98&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258F%2584%25EC%25BB%25A4%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=Docker%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0:arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%20Docker%EB%A1%9C%20python%EC%84%9C%EB%B2%84%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0%20-%20%EC%8B%A0%EC%9C%A4%EC%88%98&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258F%2584%25EC%25BB%25A4%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258F%2584%25EC%25BB%25A4%2F&text=Docker%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0:%20%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88,%20%EC%9D%B4%EB%AF%B8%EC%A7%80,%20%EB%B3%BC%EB%A5%A8,%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EB%B9%8C%EB%93%9C%20-%20%EC%8B%A0%EC%9C%A4%EC%88%98" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F%25EB%258F%2584%25EC%25BB%25A4%2F&text=Docker%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0:arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%20Docker%EB%A1%9C%20python%EC%84%9C%EB%B2%84%20%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0%20-%20%EC%8B%A0%EC%9C%A4%EC%88%98" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -899,7 +1123,7 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/%EB%8F%84%EC%BB%A4/">Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드</a>
+          <a href="/posts/%EB%8F%84%EC%BB%A4/">Docker 이해하기:arm환경에서 Docker로 python서버 구성하기</a>
         </li>
       
         
@@ -1103,252 +1327,6 @@
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
 
 
   <section>
@@ -1372,18 +1350,6 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/troubleshooting/">troubleshooting</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EB%B3%BC%EB%A5%A8/">볼륨</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EB%B9%8C%EB%93%9C/">빌드</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80/">이미지</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/">컨테이너</a>
       
     </div>
   </section>
@@ -1702,252 +1668,6 @@
         
         
 
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
 
 
   <section>
@@ -1971,18 +1691,6 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/troubleshooting/">troubleshooting</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EB%B3%BC%EB%A5%A8/">볼륨</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EB%B9%8C%EB%93%9C/">빌드</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80/">이미지</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88/">컨테이너</a>
       
     </div>
   </section>

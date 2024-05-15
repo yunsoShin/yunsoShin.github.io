@@ -23,11 +23,10 @@ Stencil은 웹 컴포넌트를 빌드하기 위한 도구이며, 다음과 같�
 
 ### 파일 구조
 
-www/<br>
-└── assets/SEO/<br>
-├── sitemap.xml<br>
+`/www/assets/SEO/`{: .filepath}<br>
+└──sitemap.xml<br>
+└──rss.xml<br>
 ├── rss.xml<br>
-└── robots.txt
 
 ## Vercel에서의 배포
 
@@ -81,10 +80,15 @@ Vercel을 사용하여 Stencil 프로젝트를 배포하는 과정은 다음과 
 라우팅과 파일 타입 설정
 위의 vercel.json 설정을 통해 각 파일에 적절한 Content-Type 헤더를 설정하고, 캐시 제어를 위한 Cache-Control 헤더를 추가하여 SEO를 최적화할 수 있습니다.
 
-결론
+## 마치며
+
 이 글에서는 Stencil과 Vercel을 사용하여 RSS, sitemap, 및 robots.txt 파일을 관리하고 SEO를 개선하는 방법을 알아보았습니다.
-위의 SEO적용에서의 시행착오가 많았습니다. 프로젝트 루트에 해당파일을 위치시켜서 빌드하면 정적자산들이 제대로 빌드되지않는 현상을 겪었습니다.
-stencil에서의 정적자산들에 대한 기본위치는 리액트에서의 public처럼 assets에 위치해 있으며 vercel에서의 설정은 해당 assets가 빌드되고 최종적으로
-deploy되는 폴더인 www/assets/설정 및 저장한 폴더의 정적자산 PATH로 설정을 해줘야합니다.
+
+사실은 위의 SEO적용에서의 시행착오가 많았습니다.
+프로젝트 루트에 해당파일을 위치시켜서 빌드하면 정적자산들이 제대로 빌드되지않는 현상을 겪었고,
+stencil에서의 정적자산들에 대한 기본위치는 리액트에서의 public처럼 assets에 위치해 있다는 사실을 파악하고
+vercel에서의 빌드설정파일인 vercel.json에서 최종적으로 자산에 대한 설정을 추가적으로 작업해줘야했습니다
+
+결론적으로 deploy되는 폴더인 www/assets/설정 및 저장한 폴더의 정적자산 PATH로 설정을 해줘야합니다..
 
 이 설정은 정적자산을 바탕으로 포스팅되었지만 해당 정적자산들을 동적으로 바꿔준다 하더라도 유효합니다.

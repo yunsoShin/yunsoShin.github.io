@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>신윤수</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-14T22:58:37+08:00</updated>
+  <updated>2024-05-15T16:28:17+08:00</updated>
   <author>
     <name></name>
     <uri>http://localhost:4000/</uri>
@@ -20,21 +20,19 @@
 
   
   <entry>
-    <title>Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드</title>
-    <link href="http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/" rel="alternate" type="text/html" title="Docker 이해하기: 컨테이너, 이미지, 볼륨, 그리고 빌드" />
-    <published>2024-05-14T00:00:00+08:00</published>
+    <title>Docker 이해하기:arm환경에서 Docker로 python서버 구성하기</title>
+    <link href="http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/" rel="alternate" type="text/html" title="Docker 이해하기:arm환경에서 Docker로 python서버 구성하기" />
+    <published>2024-05-15T00:00:00+08:00</published>
   
-    <updated>2024-05-14T00:00:00+08:00</updated>
+    <updated>2024-05-15T00:00:00+08:00</updated>
   
     <id>http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/</id>
     <content src="http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/" />
     <author>
-      <name>작성자 이름 또는 닉네임</name>
+      <name>yunsoo Shin</name>
     </author>
 
   
-    
-    <category term="기술" />
     
     <category term="docker" />
     
@@ -42,13 +40,12 @@
 
   <summary>Docker 소개
 
-Docker는 개발자들이 어디에서나 일관된 환경에서 애플리케이션을 실행할 수 있도록 컨테이너라는 형태로 소프트웨어를 패키징할 수 있는 플랫폼으로, 소프트웨어 개발에 혁명을 일으켰습니다. 이 글에서는 Docker가 등장한 배경, 그리고 컨테이너, 이미지, 볼륨, 빌드 프로세스 같은 주요 개념을 탐구하고, 이러한 개념들이 어떻게 효율적이고 예측 가능한 소프트웨어 배포에 기여하는지 살펴보겠습니다.
+Docker는 개발자들이 어디에서나 일관된 환경에서 애플리케이션을 실행할 수 있도록 컨테이너라는 형태로 소프트웨어를 패키징할 수 있는 플랫폼으로, 소프트웨어 개발에 혁명을 일으켰습니다. 이 글에서는 Docker가 등장한 배경, 그리고 컨테이너, 이미지, 볼륨, 빌드 프로세스 같은 주요 개념을 탐구하고, 이러한 개념들이 어떻게 효율적이고 예측 가능한 소프트웨어 배포에 기여하는지 살펴보고 , ARM아키텍쳐로 구성된 로컬환경에서
+버전이 낮은 Python서버를 Docker로 구성하고 서버를 돌려봅니다..
 
 Docker의 등장
 
-Docker는 2013년에 도입되어, 서로 다른 컴퓨팅 환경에서 소프트웨어를 신뢰성 있게 구성하는 복잡성에 대응하였습니다. 컨테이너 기술을 활용하여 기반 인프라에 관계없이 코드가 동일하게 실행될 수 있도록 함으로써 개발, 테스트 및 배포 워크플로우를 단순화했습니다.
-
-주요...</summary>
+Docker는 2013년에 도입되어, 서로 다른 컴퓨팅 환경에서 소프트웨어를 신뢰성 있게 구성하는 복잡성에 대응하였습니다. 컨테이너 기술을 활용하여 기반 인프라에 관...</summary>
 
   </entry>
 
