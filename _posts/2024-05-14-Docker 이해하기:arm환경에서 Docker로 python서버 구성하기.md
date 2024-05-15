@@ -82,7 +82,7 @@ docker run -p 7077:7077 my-python-app
 ```
 
 포트번호는 각자 REST API통신을 하기위해 합의된 번호를 사용합니다.
-![Desktop View](../assets/img/post/20240515/dockerRun.jpg){: .normal }
+![Desktop View](/assets/img/post/20240515/dockerRun.jpg){: .normal }
 
 도커 컨테이너가 잘 실행되는지 확인하기위해서 REST API를 날려보고 WireShark로 원활한 통신을 하는지 확인해 봅니다
 
