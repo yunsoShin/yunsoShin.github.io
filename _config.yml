@@ -93,7 +93,7 @@ theme_mode: dark # [light | dark]
 # will be added to all media resources (site avatar, posts' images, audio and video files) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-cdn: "https://github.com/yunsoShin/yunsoShin.github.io/blob/main" #"https://chirpy-img.netlify.app"
+cdn: "https://raw.githubusercontent.com/yunsoShin/yunsoShin.github.io/main/" #"https://chirpy-img.netlify.app"
 
 # the avatar on sidebar, support local or CORS resources
 avatar: "/commons/avatar.jpg"
