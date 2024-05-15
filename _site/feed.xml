@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>신윤수</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-15T20:10:58+09:00</updated>
+  <updated>2024-05-15T20:12:44+09:00</updated>
   <author>
     <name></name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/Docker-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Docker%EB%A1%9C-python%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Docker 이해하기:arm환경에서 Docker로 python서버 구성하기" />
     <published>2024-05-15T00:00:00+09:00</published>
   
-    <updated>2024-05-15T18:44:09+09:00</updated>
+    <updated>2024-05-15T20:11:30+09:00</updated>
   
     <id>http://localhost:4000/posts/Docker-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Docker%EB%A1%9C-python%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/</id>
     <content src="http://localhost:4000/posts/Docker-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Docker%EB%A1%9C-python%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/" />
