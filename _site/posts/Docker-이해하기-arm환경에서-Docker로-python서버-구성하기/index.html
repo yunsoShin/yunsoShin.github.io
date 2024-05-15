@@ -45,7 +45,7 @@
 <meta name="twitter:site" content="@twitter_username" />
 <meta name="twitter:creator" content="@yunsoo Shin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"yunsoo Shin"},"dateModified":"2024-05-15T16:48:17+08:00","datePublished":"2024-05-15T00:00:00+08:00","description":"Docker 소개","headline":"Docker 이해하기:arm환경에서 Docker로 python서버 구성하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Docker-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Docker%EB%A1%9C-python%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"},"url":"http://localhost:4000/posts/Docker-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Docker%EB%A1%9C-python%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"yunsoo Shin"},"dateModified":"2024-05-15T17:08:04+08:00","datePublished":"2024-05-15T00:00:00+08:00","description":"Docker 소개","headline":"Docker 이해하기:arm환경에서 Docker로 python서버 구성하기","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Docker-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Docker%EB%A1%9C-python%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"},"url":"http://localhost:4000/posts/Docker-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Docker%EB%A1%9C-python%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -538,6 +538,14 @@
 
       
     
+      
+
+      
+      
+      
+
+      
+    
 
     <!-- take out classes -->
     
@@ -584,6 +592,14 @@
     
     
 
+    
+      
+
+      
+      
+      
+
+      
     
       
 
@@ -925,7 +941,7 @@
 
 <time
   
-  data-ts="1715762897"
+  data-ts="1715764084"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -1074,11 +1090,11 @@ Docker를 사용하여 호환성 문제를 해결할 수 있는 Python 3.10 이�
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>포트번호는 각자 REST API통신을 하기위해 합의된 번호를 사용합니다.
-<a href="/assets//img/post/20240515/dockerRun.jpg" class="popup img-link  shimmer"><img src="/assets//img/post/20240515/dockerRun.jpg" alt="Desktop View" loading="lazy"></a></p>
+<a href="https://chirpy-img.netlify.app/../assets/img/post/20240515/dockerRun.jpg" class="popup img-link normal shimmer"><img src="https://chirpy-img.netlify.app/../assets/img/post/20240515/dockerRun.jpg" alt="Desktop View"  loading="lazy"></a></p>
 
 <p>도커 컨테이너가 잘 실행되는지 확인하기위해서 REST API를 날려보고 WireShark로 원활한 통신을 하는지 확인해 봅니다</p>
 
-<p><a href="/assets//img/post/20240515/dockerPacketWireShark.jpg" class="popup img-link  shimmer"><img src="/assets//img/post/20240515/dockerPacketWireShark.jpg" alt="Desktop View" loading="lazy"></a>
+<p><a href="https://chirpy-img.netlify.app/assets/img/post/20240515/dockerPacketWireShark.jpg" class="popup img-link normal shimmer"><img src="https://chirpy-img.netlify.app/assets/img/post/20240515/dockerPacketWireShark.jpg" alt="Desktop View"  loading="lazy"></a>
 서버에서 미리 정의해둔 비지니스 로직을 실행하고 반환하는 값이 정상적입니다.</p>
 
 <p>위의 방식으로 7077 포트를 사용하는 파이썬 서버를 도커환경에서 구성하고 API를 실행시켜보았습니다.</p>
