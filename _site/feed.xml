@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>신윤수</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-15T16:28:17+08:00</updated>
+  <updated>2024-05-15T16:39:46+08:00</updated>
   <author>
     <name></name>
     <uri>http://localhost:4000/</uri>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>Docker 이해하기:arm환경에서 Docker로 python서버 구성하기</title>
-    <link href="http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/" rel="alternate" type="text/html" title="Docker 이해하기:arm환경에서 Docker로 python서버 구성하기" />
+    <link href="http://localhost:4000/posts/Docker-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Docker%EB%A1%9C-python%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Docker 이해하기:arm환경에서 Docker로 python서버 구성하기" />
     <published>2024-05-15T00:00:00+08:00</published>
   
     <updated>2024-05-15T00:00:00+08:00</updated>
   
-    <id>http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/</id>
-    <content src="http://localhost:4000/posts/%EB%8F%84%EC%BB%A4/" />
+    <id>http://localhost:4000/posts/Docker-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Docker%EB%A1%9C-python%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/</id>
+    <content src="http://localhost:4000/posts/Docker-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-arm%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-Docker%EB%A1%9C-python%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/" />
     <author>
       <name>yunsoo Shin</name>
     </author>
@@ -81,7 +81,7 @@ Docker는 2013년에 도입되어, 서로 다른 컴퓨팅 환경에서 소프�
     <link href="http://localhost:4000/posts/stencil%EC%97%90%EC%84%9C-%EC%A0%95%EC%A0%81%ED%8C%8C%EC%9D%BC-%EC%B6%94%EA%B0%80%ED%95%B4-SEO%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Stencil에서 정적 파일을 이용한 SEO 최적화: RSS, Sitemap, Robots.txt 설정하기" />
     <published>2024-05-12T00:00:00+08:00</published>
   
-    <updated>2024-05-13T20:00:15+08:00</updated>
+    <updated>2024-05-15T16:28:38+08:00</updated>
   
     <id>http://localhost:4000/posts/stencil%EC%97%90%EC%84%9C-%EC%A0%95%EC%A0%81%ED%8C%8C%EC%9D%BC-%EC%B6%94%EA%B0%80%ED%95%B4-SEO%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0/</id>
     <content src="http://localhost:4000/posts/stencil%EC%97%90%EC%84%9C-%EC%A0%95%EC%A0%81%ED%8C%8C%EC%9D%BC-%EC%B6%94%EA%B0%80%ED%95%B4-SEO%EC%B5%9C%EC%A0%81%ED%99%94%ED%95%98%EA%B8%B0/" />

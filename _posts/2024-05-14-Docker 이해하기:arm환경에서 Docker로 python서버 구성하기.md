@@ -83,4 +83,4 @@ docker run -p 7077:7077 my-python-app
 ```
 
 포트번호는 각자 REST API통신을 하기위해 합의된 번호를 사용합니다.
-![Desktop View](/assets/img/post/20240515/dockerRun.jpg){: .normal }
+![Desktop View](/assets/img/post/20240515/dockerRun.jpg)
