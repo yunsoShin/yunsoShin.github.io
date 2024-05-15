@@ -14,7 +14,7 @@
 
 
 <!-- `site.alt_lang` can specify a language different from the UI -->
-<html lang="en" >
+<html lang="ko-KR" data-mode="dark">
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
@@ -31,19 +31,18 @@
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.3" />
 <meta property="og:title" content="Categories" />
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="ko_KR" />
 <meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <link rel="canonical" href="http://localhost:4000/categories/" />
 <meta property="og:url" content="http://localhost:4000/categories/" />
 <meta property="og:site_name" content="신윤수" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-05-15T18:26:25+08:00" />
+<meta property="article:published_time" content="2024-05-15T19:58:46+09:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Categories" />
-<meta name="twitter:site" content="@twitter_username" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-15T18:26:25+08:00","datePublished":"2024-05-15T18:26:25+08:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/categories/"},"url":"http://localhost:4000/categories/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-15T19:58:46+09:00","datePublished":"2024-05-15T19:58:46+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Categories","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/categories/"},"url":"http://localhost:4000/categories/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -117,113 +116,6 @@
   <!-- JavaScript -->
 
   
-    <!-- Switch the mode between dark and light. -->
-
-<script type="text/javascript">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return 'mode';
-    }
-    static get MODE_ATTR() {
-      return 'data-mode';
-    }
-    static get DARK_MODE() {
-      return 'dark';
-    }
-    static get LIGHT_MODE() {
-      return 'light';
-    }
-    static get ID() {
-      return 'mode-toggle';
-    }
-
-    constructor() {
-      let self = this;this.sysDarkPrefers.addEventListener('change', () => {
-        if (self.hasMode) {
-          self.clearMode();
-        }
-        self.notify();
-      });
-
-      if (!this.hasMode) {
-        return;
-      }
-
-      if (this.isDarkMode) {
-        this.setDark();
-      } else {
-        this.setLight();
-      }
-    }
-
-    get sysDarkPrefers() {
-      return window.matchMedia('(prefers-color-scheme: dark)');
-    }
-
-    get isPreferDark() {
-      return this.sysDarkPrefers.matches;
-    }
-
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
-
-    get hasMode() {
-      return this.mode != null;
-    }
-
-    get mode() {
-      return sessionStorage.getItem(ModeToggle.MODE_KEY);
-    }get modeStatus() {
-      if (this.hasMode) {
-        return this.mode;
-      } else {
-        return this.isPreferDark ? ModeToggle.DARK_MODE : ModeToggle.LIGHT_MODE;
-      }
-    }
-
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        '*'
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        this.clearMode();
-      } else {
-        if (this.isPreferDark) {
-          this.setLight();
-        } else {
-          this.setDark();
-        }
-      }
-
-      this.notify();
-    }
-  }
-
-  const modeToggle = new ModeToggle();
-</script>
-
-  
 
   <!-- A placeholder to allow defining custom metadata -->
 
@@ -235,7 +127,7 @@
 
 <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
   <header class="profile-wrapper">
-    <a href="/" id="avatar" class="rounded-circle"><img src="https://chirpy-img.netlify.app/commons/avatar.jpg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
+    <a href="/" id="avatar" class="rounded-circle"><img src="https://raw.githubusercontent.com/yunsoShin/yunsoShin.github.io/main/commons/avatar.jpg" width="112" height="112" alt="avatar" onerror="this.style.display='none'"></a>
 
     <h1 class="site-title">
       <a href="/">신윤수</a>
@@ -250,7 +142,7 @@
       <li class="nav-item">
         <a href="/" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
-          <span>HOME</span>
+          <span>홈</span>
         </a>
       </li>
       <!-- the real tabs -->
@@ -260,7 +152,7 @@
             <i class="fa-fw fas fa-stream"></i>
             
 
-            <span>CATEGORIES</span>
+            <span>카테고리</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -270,7 +162,7 @@
             <i class="fa-fw fas fa-tags"></i>
             
 
-            <span>TAGS</span>
+            <span>태그</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -280,7 +172,7 @@
             <i class="fa-fw fas fa-archive"></i>
             
 
-            <span>ARCHIVES</span>
+            <span>아카이브</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -290,7 +182,7 @@
             <i class="fa-fw fas fa-info-circle"></i>
             
 
-            <span>ABOUT</span>
+            <span>정보</span>
           </a>
         </li>
         <!-- .nav-item -->
@@ -300,21 +192,13 @@
 
   <!-- <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
     
-      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      
-        <span class="icon-border"></span>
-      
-    
 
     
       
 
       
         <a
-          href="https://github.com/github_username"
+          href="https://github.com/yunsoshin"
           aria-label="github"
           
 
@@ -337,7 +221,7 @@
 
       
         <a
-          href="https://twitter.com/twitter_username"
+          href="https://twitter.com/"
           aria-label="twitter"
           
 
@@ -414,14 +298,14 @@
         
           
             <span>
-              <a href="/">Home</a>
+              <a href="/">홈</a>
             </span>
 
           
         
           
             
-              <span>Categories</span>
+              <span>카테고리</span>
             
 
           
@@ -435,7 +319,7 @@
     </button>
 
     <div id="topbar-title">
-      Categories
+      카테고리
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link">
@@ -450,10 +334,10 @@
         type="search"
         aria-label="search"
         autocomplete="off"
-        placeholder="Search..."
+        placeholder="검색..."
       >
     </search>
-    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">Cancel</button>
+    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">취소</button>
   </div>
 </header>
 
@@ -470,7 +354,7 @@
     
     
     <h1 class="dynamic-title">
-      Categories
+      카테고리
     </h1>
     <div class="content">
       
@@ -515,14 +399,14 @@
             
               2
               
-                categories
+                카테고리
               ,
             
 
             2
 
             
-              posts
+              포스트
             
           </span>
         </span>
@@ -558,7 +442,7 @@
                   1
 
                   
-                    post
+                    포스트
                   
                 </span>
               </li>
@@ -574,7 +458,7 @@
                   1
 
                   
-                    post
+                    포스트
                   
                 </span>
               </li>
@@ -638,7 +522,7 @@
             1
 
             
-              post
+              포스트
             
           </span>
         </span>
@@ -714,14 +598,14 @@
             
               1
               
-                category
+                카테고리
               ,
             
 
             1
 
             
-              post
+              포스트
             
           </span>
         </span>
@@ -757,7 +641,7 @@
                   1
 
                   
-                    post
+                    포스트
                   
                 </span>
               </li>
@@ -798,7 +682,7 @@
 
 
   <section id="access-lastmod">
-    <h2 class="panel-heading">Recently Updated</h2>
+    <h2 class="panel-heading">최근 업데이트</h2>
     <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
       
         
@@ -1012,7 +896,7 @@
 
 
   <section>
-    <h2 class="panel-heading">Trending Tags</h2>
+    <h2 class="panel-heading">인기 태그</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -1068,19 +952,19 @@
       <span
         data-bs-toggle="tooltip"
         data-bs-placement="top"
-        title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
-      >Some rights reserved.</span>
+        title="명시되지 않는 한 이 사이트의 블로그 게시물은 작성자의 Creative Commons Attribution 4.0 International(CC BY 4.0) 라이선스에 따라 사용이 허가되었습니다."
+      >일부 권리 보유</span>
     
   </p>
 
-  <p>Using the <a
+  <p>Powered by <!-- <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> --> with <a
         data-bs-toggle="tooltip"
         data-bs-placement="top"
         title="v6.5.5"
      
         target="_blank"
         rel="noopener"
-      >신윤수</a> theme for <!-- <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> -->.
+      >신윤수</a> theme
   </p>
 </footer>
 
@@ -1270,7 +1154,7 @@
 
 
   <section>
-    <h2 class="panel-heading">Trending Tags</h2>
+    <h2 class="panel-heading">인기 태그</h2>
     <div class="d-flex flex-wrap mt-3 mb-1 me-3">
       
         
@@ -1330,9 +1214,9 @@
     ></button>
   </div>
   <div class="toast-body text-center pt-0">
-    <p class="px-2 mb-3">A new version of content is available.</p>
+    <p class="px-2 mb-3">새 버전의 콘텐츠를 사용할 수 있습니다.</p>
     <button type="button" class="btn btn-primary" aria-label="Update">
-      Update
+      업데이트
     </button>
   </div>
 </aside>
@@ -1410,7 +1294,7 @@
     resultsContainer: document.getElementById('search-results'),
     json: '/assets/js/data/search.json',
     searchResultTemplate: '  <article class="px-1 px-sm-2 px-lg-4 px-xl-0">    <header>      <h2><a href="{url}">{title}</a></h2>      <div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1">        {categories}        {tags}      </div>    </header>    <p>{snippet}</p>  </article>',
-    noResultsText: '<p class="mt-5">Oops! No results found.</p>',
+    noResultsText: '<p class="mt-5">검색 결과가 없습니다.</p>',
     templateMiddleware: function(prop, value, template) {
       if (prop === 'categories') {
         if (value === '') {
