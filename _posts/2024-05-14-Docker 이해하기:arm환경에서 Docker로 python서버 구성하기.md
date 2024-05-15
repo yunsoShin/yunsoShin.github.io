@@ -84,3 +84,12 @@ docker run -p 7077:7077 my-python-app
 
 포트번호는 각자 REST API통신을 하기위해 합의된 번호를 사용합니다.
 ![Desktop View](/assets//img/post/20240515/dockerRun.jpg)
+
+도커 컨테이너가 잘 실행되는지 확인하기위해서 REST API를 날려보고 WireShark로 원활한 통신을 하는지 확인해 봅니다
+
+![Desktop View](/assets//img/post/20240515/dockerPacketWireShark.jpg)
+서버에서 미리 정의해둔 비지니스 로직을 실행하고 반환하는 값이 정상적입니다.
+
+위의 방식으로 7077 포트를 사용하는 파이썬 서버를 도커환경에서 구성하고 API를 실행시켜보았습니다.
+
+이로써 어떤 상황에도 서버를 원활하게 구동할 준비가 되었습니다!
