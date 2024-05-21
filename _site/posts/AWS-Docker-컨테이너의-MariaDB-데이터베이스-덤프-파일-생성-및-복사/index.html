@@ -573,9 +573,12 @@
 
 <h2 id="개요"><span class="me-2">개요</span><a href="#개요" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>이 블로그 글에서는 AWS 인스턴스의 Docker 컨테이너에서 MariaDB 데이터베이스 덤프 파일을 생성하고, 이를 호스트 로컬 폴더로 복사하는 방법을 단계별로 설명합니다.</p>
+<p>이 블로그 글에서는 AWS 인스턴스의 Docker 컨테이너에서 MariaDB 데이터베이스 덤프 파일을 생성하고,
+이를 호스트 로컬 폴더로 복사하는 방법을 단계별로 설명합니다.</p>
 
-<p>SSH로 공유된 원격 인스턴스에 접근하여 인스턴스 내부에서 돌아가는 DB환경을 로컬로 재구성하기위해서 필요한 작업을 합니다.</p>
+<p>현재 나의 상황은 AWS 인스턴스로 올라가있는 서버와<br />
+해당 서버가 이용중인 DB가 도커환경에서 구동중입니다<br />
+SSH로 공유된 원격 인스턴스에 접근하여 인스턴스 내부에서 돌아가는 DB환경을 로컬로 재구성하기위해서 필요한 작업을 합니다.</p>
 
 <h2 id="1-docker-컨테이너-내부에서-mariadb-덤프-파일-생성"><span class="me-2">1. Docker 컨테이너 내부에서 MariaDB 덤프 파일 생성</span><a href="#1-docker-컨테이너-내부에서-mariadb-덤프-파일-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -607,21 +610,34 @@
 
 <h2 id="열-통계-정보-포함-비활성화"><span class="me-2">열 통계 정보 포함 비활성화:</span><a href="#열-통계-정보-포함-비활성화" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>MySQL 8.0.21부터 mysqldump는 기본적으로 열 통계 정보를 덤프 파일에 포함시킵니다. 그러나 일부 MariaDB 버전 또는 특정 설정에서는 이 기능이 호환되지 않을 수 있습니다. 따라서 이 옵션을 사용하면 열 통계 정보를 포함하지 않도록 설정할 수 있습니다.</p>
+<p>MySQL 8.0.21부터 mysqldump는 기본적으로 열 통계 정보를 덤프 파일에 포함시킵니다. <br />
+그러나 일부 MariaDB 버전 또는 특정 설정에서는 이 기능이 호환되지 않을 수 있습니다. <br />
+따라서 이 옵션을 사용하면 열 통계 정보를 포함하지 않도록 설정할 수 있습니다.<br /></p>
 
 <p>만약 mariaDB를 사용하는 환경이고 , 아래와같은 에러가 발생한다면 열통계를 끄는 옵션을 추가하여주세요</p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>mysqldump: Couldn<span class="s1">'t execute '</span>SELECT COLUMN_NAME,JSON_EXTRACT<span class="o">(</span>HISTOGRAM, <span class="s1">'$."number-of-buckets-specified"'</span><span class="o">)</span>  FROM information_schema.COLUMN_STATISTICS                WHERE SCHEMA_NAME <span class="o">=</span> <span class="s1">'[DatabaseName]'</span> AND TABLE_NAME <span class="o">=</span> <span class="s1">'[TableName]'</span><span class="p">;</span><span class="s1">': Unknown table '</span>COLUMN_STATISTICS<span class="s1">' in information_schema (1109)
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>mysqldump: Couldn<span class="s1">'t execute '</span>SELECT COLUMN_NAME,
+JSON_EXTRACT<span class="o">(</span>HISTOGRAM, <span class="s1">'$."number-of-buckets-specified"'</span><span class="o">)</span>
+FROM information_schema.COLUMN_STATISTICS
+WHERE SCHEMA_NAME <span class="o">=</span> <span class="s1">'[DatabaseName]'</span>
+AND TABLE_NAME <span class="o">=</span> <span class="s1">'[TableName]'</span><span class="p">;</span><span class="s1">':
+Unknown table '</span>COLUMN_STATISTICS<span class="s1">' in information_schema (1109)
 </span></pre></td></tr></tbody></table></code></div></div>
 
-<p>이 오류는 mysqldump 명령어가 information_schema 데이터베이스의 COLUMN_STATISTICS 테이블을 찾지 못해서 발생합니다. 이 문제는 MariaDB와 MySQL 버전 차이로 인해 발생할 수 있습니다.</p>
+<p>이 오류는 MariaDB와 MySQL 버전 차이로 인해 발생하며 <br />
+mysqldump 명령어가 information_schema 데이터베이스의 COLUMN_STATISTICS 테이블을 찾지 못해서 발생합니다.<br /></p>
 
-<p>현재 우리의 DB구성은 mariaDB였기에 버전호환성 문제를 일으키는 것 같습니다.</p>
+<p>현재 우리의 DB구성은 mariaDB였기에 버전호환성 문제를 일으키는 것 같습니다.<br /></p>
 
-<p>이를 해결하기 위해 –column-statistics=0 옵션을 추가하여 COLUMN_STATISTICS 기능을 비활성화할 수 있습니다. 다음은 명령어 예제입니다:</p>
+<p>이를 해결하기 위해 –column-statistics=0 옵션을 추가하여 COLUMN_STATISTICS 기능을 비활성화할 수 있습니다.<br /></p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
@@ -674,7 +690,8 @@ drwxr-xr-x 21 root root 4096 May 21 12:00 ..
 </pre></td></tr></tbody></table></code></div></div>
 
 <p>요약
-이 과정을 통해 AWS 인스턴스의 Docker 컨테이너에서 MariaDB 데이터베이스 덤프 파일을 생성하고, 이를 호스트 머신으로 복사할 수 있습니다. 아래는 전체 과정의 요약입니다:</p>
+이 과정을 통해 AWS 인스턴스의 Docker 컨테이너에서 MariaDB 데이터베이스 덤프 파일을 생성하고<br />
+이를 호스트 머신으로 복사할 수 있습니다</p>
 
 <ul>
   <li>Docker 컨테이너 내부에 접속</li>

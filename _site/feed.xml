@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>신윤수</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-21T23:38:45+09:00</updated>
+  <updated>2024-05-21T23:47:37+09:00</updated>
   <author>
     <name></name>
     <uri>http://localhost:4000/</uri>
@@ -48,8 +48,11 @@
 
 개요
 
-이 블로그 글에서는 AWS 인스턴스의 Docker 컨테이너에서 MariaDB 데이터베이스 덤프 파일을 생성하고, 이를 호스트 로컬 폴더로 복사하는 방법을 단계별로 설명합니다.
+이 블로그 글에서는 AWS 인스턴스의 Docker 컨테이너에서 MariaDB 데이터베이스 덤프 파일을 생성하고,
+이를 호스트 로컬 폴더로 복사하는 방법을 단계별로 설명합니다.
 
+현재 나의 상황은 AWS 인스턴스로 올라가있는 서버와
+해당 서버가 이용중인 DB가 도커환경에서 구동중입니다
 SSH로 공유된 원격 인스턴스에 접근하여 인스턴스 내부에서 돌아가는 DB환경을 로컬로 재구성하기위해서 필요한 작업을 합니다.
 
 1. Docker 컨테이너 내부에서 MariaDB 덤프 파일 생성
@@ -58,10 +61,7 @@ SSH로 공유된 원격 인스턴스에 접근하여 인스턴스 내부에서 �
 
 컨테이너 이름을 사용하는 방법:
 
-sudo docker exec -it [container_name] /bin/bash
-
-
-컨테이너 ID를 사용하는 방...</summary>
+sudo ...</summary>
 
   </entry>
 
