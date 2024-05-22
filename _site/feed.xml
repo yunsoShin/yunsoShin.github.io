@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>신윤수</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-05-23T01:07:06+09:00</updated>
+  <updated>2024-05-23T01:25:01+09:00</updated>
   <author>
     <name></name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,11 @@
 
   
   <entry>
-    <title>Next.js와 react server components (rsc) 이해하기</title>
-    <link href="http://localhost:4000/posts/Next.js%EC%99%80-React-Server-Components-(RSC)-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Next.js와 react server components (rsc) 이해하기" />
-    <published>2024-05-22T00:00:00+09:00</published>
+    <title>Next.js와 React Server Components (RSC) 이해하기</title>
+    <link href="http://localhost:4000/posts/Next.js%EC%99%80-React-Server-Components-(RSC)-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Next.js와 React Server Components (RSC) 이해하기" />
+    <published>2024-05-21T00:00:00+09:00</published>
   
-    <updated>2024-05-22T00:00:00+09:00</updated>
+    <updated>2024-05-21T00:00:00+09:00</updated>
   
     <id>http://localhost:4000/posts/Next.js%EC%99%80-React-Server-Components-(RSC)-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/</id>
     <content src="http://localhost:4000/posts/Next.js%EC%99%80-React-Server-Components-(RSC)-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/" />
@@ -34,29 +34,19 @@
 
   
     
+    <category term="Next.js" />
+    
+    <category term="React" />
+    
   
 
-  <summary>2024 05 22
-
-
-
-layout: post
-
-title: “Next.js와 React Server Components (RSC) 이해하기”
-
-date: 2024-05-21
-
-categories: [Next.js, React]
-
-
-
-개요
+  <summary>개요
 
 Next.js는 React 기반의 프레임워크로, 서버 측 렌더링(SSR), 정적 사이트 생성(SSG) 등의 기능을 통해 React 애플리케이션의 성능을 최적화합니다. Next.js는 React Server Components 개념을 도입하여 서버 컴포넌트와 클라이언트 컴포넌트를 구별합니다. 이러한 기술적 발전과 구분 방법을 다음과 같이 설명하고, 이를 최적화하여 활용하는 방법을 소개합니다.
 
 기술적인 발전 과정
 
-Next.js의 서버 컴포넌트와 클라이언트 컴포넌트...</summary>
+Next.js의 서버 컴포넌트와 클라이언트 컴포넌트 구분은 React의 발전과 밀접한 관련이 있습니다. 초기에는 SSR(Server-Side Rendering)과 CSR(Client-Side Rendering)을 사용했으며, 이후 정적 사이트 생성(SSG), Incremental Sta...</summary>
 
   </entry>
 
