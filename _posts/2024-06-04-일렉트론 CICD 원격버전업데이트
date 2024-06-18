@@ -1,0 +1,150 @@
+
+---
+layout: post
+title: "일렉트론(Electron) 앱의 CI/CD 배포 및 원격 업데이트 기능 추가 방법"
+categories: [Electron, CI/CD, Deployment]
+tags: [Electron, CI/CD, GitHub Actions, electron-builder, electron-updater]
+---
+
+일렉트론(Electron) 앱의 CI/CD 배포 및 원격 업데이트 기능을 추가하려면 다음과 같은 단계로 진행할 수 있습니다.
+
+### 1. CI/CD 환경 구축
+
+#### CI/CD 도구 선택
+- GitHub Actions, GitLab CI/CD, Jenkins 등 원하는 도구를 선택합니다.
+
+#### Electron 빌드 및 패키징
+- `electron-builder`를 사용하면 다양한 플랫폼(Windows, macOS, Linux)용으로 손쉽게 빌드하고 패키징할 수 있습니다.
+- `electron-builder` 설정 파일인 `package.json`에 빌드 설정을 추가합니다.
+
+```json
+{
+  "name": "your-app",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.yourapp.id",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "devDependencies": {
+    "electron": "^13.0.0",
+    "electron-builder": "^22.11.7"
+  }
+}
+```
+
+#### CI/CD 설정
+- GitHub Actions 예시:
+
+```yaml
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm run build
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm run build
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            dist/*.zip
+            dist/*.AppImage
+            dist/*.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+### 2. 원격 업데이트 기능 추가
+
+#### 업데이트 서버 설정
+- `electron-updater`를 사용하여 업데이트 서버를 설정합니다.
+- GitHub, S3, 자사 서버 등을 업데이트 소스로 사용할 수 있습니다.
+
+#### 앱 설정
+- Electron 메인 프로세스에서 업데이트를 체크하도록 설정합니다.
+
+```javascript
+const { app, BrowserWindow, autoUpdater } = require('electron');
+const path = require('path');
+
+let mainWindow;
+
+function createWindow () {
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
+  });
+
+  mainWindow.loadFile('index.html');
+}
+
+app.on('ready', () => {
+  createWindow();
+
+  autoUpdater.checkForUpdatesAndNotify();
+
+  autoUpdater.on('update-available', () => {
+    console.log('Update available.');
+  });
+
+  autoUpdater.on('update-downloaded', () => {
+    autoUpdater.quitAndInstall();
+  });
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit();
+  }
+});
+
+app.on('activate', () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  }
+});
+```
+
+### 3. 업데이트 배포
+- 새로운 버전이 배포될 때마다 `electron-builder`를 통해 패키징 후 업데이트 서버에 업로드합니다.
+- GitHub를 사용하는 경우, 새 릴리스를 생성하면 업데이트가 자동으로 적용될 수 있습니다.
+
+이제 CI/CD 파이프라인을 통해 자동으로 빌드 및 배포가 이루어지고, 사용자들에게 원격 업데이트 기능이 제공될 것입니다.
