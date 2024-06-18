@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>신윤수</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-06-18T20:54:28+09:00</updated>
+  <updated>2024-06-18T20:55:01+09:00</updated>
   <author>
     <name></name>
     <uri>http://localhost:4000/</uri>
@@ -61,8 +61,8 @@
 
   
   <entry>
-    <title>일렉트론 cicd 원격버전업데이트</title>
-    <link href="http://localhost:4000/posts/%EC%9D%BC%EB%A0%89%ED%8A%B8%EB%A1%A0-CICD-%EC%9B%90%EA%B2%A9%EB%B2%84%EC%A0%84%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8/" rel="alternate" type="text/html" title="일렉트론 cicd 원격버전업데이트" />
+    <title>일렉트론(Electron) 앱의 CI/CD 배포 및 원격 업데이트 기능 추가 방법</title>
+    <link href="http://localhost:4000/posts/%EC%9D%BC%EB%A0%89%ED%8A%B8%EB%A1%A0-CICD-%EC%9B%90%EA%B2%A9%EB%B2%84%EC%A0%84%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8/" rel="alternate" type="text/html" title="일렉트론(Electron) 앱의 CI/CD 배포 및 원격 업데이트 기능 추가 방법" />
     <published>2024-06-04T00:00:00+09:00</published>
   
     <updated>2024-06-04T00:00:00+09:00</updated>
@@ -75,26 +75,36 @@
 
   
     
+    <category term="Electron" />
+    
+    <category term="CI/CD" />
+    
+    <category term="Deployment" />
+    
   
 
-  <summary>layout: post
-title: “일렉트론(Electron) 앱의 CI/CD 배포 및 원격 업데이트 기능 추가 방법”
-categories: [Electron, CI/CD, Deployment]
-tags: [Electron, CI/CD, GitHub Actions, electron-builder, electron-updater]
-—
-
-일렉트론(Electron) 앱의 CI/CD 배포 및 원격 업데이트 기능을 추가하려면 다음과 같은 단계로 진행할 수 있습니다.
+  <summary>일렉트론(Electron) 앱의 CI/CD 배포 및 원격 업데이트 기능을 추가하려면 다음과 같은 단계로 진행할 수 있습니다.
 
 1. CI/CD 환경 구축
 
 CI/CD 도구 선택
+
 
   GitHub Actions, GitLab CI/CD, Jenkins 등 원하는 도구를 선택합니다.
 
 
 Electron 빌드 및 패키징
 
-  electron-builder를 사용하면 다양한 플...</summary>
+
+  electron-builder를 사용하면 다양한 플랫폼(Windows, macOS, Linux)용으로 손쉽게 빌드하고 패키징할 수 있습니다.
+  electron-builder 설정 파일인 package.json에 빌드 설정을 추가합니다.
+
+
+{
+  &amp;quot;name&amp;quot;: &amp;quot;your-app&amp;quot;,
+  &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,
+  &amp;quot;main&amp;quot;: &amp;quot;main.js&amp;quot;,
+  &amp;quot;scripts&amp;quot;: ...</summary>
 
   </entry>
 
