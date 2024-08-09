@@ -16,6 +16,20 @@ Frigate는 실시간 객체 감지 기능을 제공하는 NVR(Network Video Reco
 - Docker Compose (선택사항, Docker Compose를 사용하는 경우)
 - 한 개 이상의 IP 카메라 또는 네트워크에 연결된 카메라
 
+일단 첫번째로 도커를 다운로드 받습니다 .
+
+<a href="https://www.docker.com/" target="_blank">도커 공식홈페이지</a>
+
+```bash
+ docker --version
+
+ docker-compose --version
+```
+
+다운로드한 도커가 잘 다운받아졌는지 확인해봅니다
+
+<h3><a href="https://yunsoshin.github.io/posts/Docker-compose%EB%9E%80/" target="_blank">docker-compose란?</a></h3>
+
 ### 1. Docker 이미지 다운로드
 
 Frigate를 Docker를 사용하여 설치하려면 먼저 Frigate의 Docker 이미지를 다운로드합니다. 터미널을 열고 다음 명령어를 실행하세요:

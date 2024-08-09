@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>신윤수</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2024-06-19T23:56:00+09:00</updated>
+  <updated>2024-08-09T22:16:13+09:00</updated>
   <author>
     <name></name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,85 @@
 
   
   <entry>
-    <title>리액트의 유즈 스테이트(useState) 훅을 깊이 있게 이해하기</title>
-    <link href="http://localhost:4000/posts/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%9D%98-useState%ED%9B%85%EC%9D%84-%EA%B9%8A%EC%9D%B4-%EC%9E%88%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="리액트의 유즈 스테이트(useState) 훅을 깊이 있게 이해하기" />
+    <title>Docker Compose란?</title>
+    <link href="http://localhost:4000/posts/Docker-compose%EB%9E%80/" rel="alternate" type="text/html" title="Docker Compose란?" />
+    <published>2024-08-09T00:00:00+09:00</published>
+  
+    <updated>2024-08-09T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Docker-compose%EB%9E%80/</id>
+    <content src="http://localhost:4000/posts/Docker-compose%EB%9E%80/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+  
+
+  <summary>Docker Compose: 개요 및 구현 방법
+
+Docker Compose는 여러 컨테이너를 정의하고 실행하는 데 사용되는 도구입니다. 특히, 여러 서비스가 상호 작용하는 복잡한 애플리케이션의 경우 유용합니다. Docker Compose를 사용하면 여러 컨테이너로 이루어진 애플리케이션을 쉽게 정의하고 배포할 수 있습니다.
+
+이 글에서는 Docker Compose의 기본 개념과 함께 이를 활용하여 애플리케이션을 구축하고 배포하는 방법을 단계별로 설명하겠습니다.
+
+
+
+1. Docker Compose란?
+
+Docker Compose는 docker-compose.yml이라는 파일을 사용하여 애플리케이션의 서비스, 네트워크, 볼륨 등을 정의합니다. docker-compose.yml 파일에 정의된 내용을 바탕으...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Frigate 설치 및 설정 가이드 (도커 사용)</title>
+    <link href="http://localhost:4000/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="Frigate 설치 및 설정 가이드 (도커 사용)" />
+    <published>2024-08-07T00:00:00+09:00</published>
+  
+    <updated>2024-08-07T00:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/</id>
+    <content src="http://localhost:4000/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/" />
+    <author>
+      <name></name>
+    </author>
+
+  
+    
+    <category term="NVR" />
+    
+    <category term="Home Assistant" />
+    
+  
+
+  <summary>Frigate는 실시간 객체 감지 기능을 제공하는 NVR(Network Video Recorder) 오픈소스 소프트웨어입니다. 홈 어시스턴트와도 통합이 가능하여, 스마트 홈 시스템에서 비디오 감시를 효율적으로 관리할 수 있게 해줍니다. Frigate는 딥러닝을 활용하여 영상에서 사람, 차량 등의 객체를 실시간으로 감지하며, 이 모든 처리는 로컬에서 수행되어 개인 정보 보호에도 유리합니다.
+
+Frigate 설치 및 설정 방법 (도커 사용)
+
+사전 준비물
+
+
+  Docker가 설치된 시스템
+  Docker Compose (선택사항, Docker Compose를 사용하는 경우)
+  한 개 이상의 IP 카메라 또는 네트워크에 연결된 카메라
+
+
+일단 첫번째로 도커를 다운로드 받습니다 .
+
+도커 공식홈페이지
+
+ ...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>리액트의 useState훅을 깊이 있게 이해하기</title>
+    <link href="http://localhost:4000/posts/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%9D%98-useState%ED%9B%85%EC%9D%84-%EA%B9%8A%EC%9D%B4-%EC%9E%88%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/" rel="alternate" type="text/html" title="리액트의 useState훅을 깊이 있게 이해하기" />
     <published>2024-06-19T00:00:00+09:00</published>
   
-    <updated>2024-06-19T00:00:00+09:00</updated>
+    <updated>2024-06-28T21:57:45+09:00</updated>
   
     <id>http://localhost:4000/posts/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%9D%98-useState%ED%9B%85%EC%9D%84-%EA%B9%8A%EC%9D%B4-%EC%9E%88%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/</id>
     <content src="http://localhost:4000/posts/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%9D%98-useState%ED%9B%85%EC%9D%84-%EA%B9%8A%EC%9D%B4-%EC%9E%88%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/" />
@@ -34,17 +108,19 @@
 
   
     
-    <category term="React" />
+    <category term="\[React," />
     
-    <category term="JavaScript" />
+    <category term="JavaScript," />
     
-    <category term="Web Development" />
+    <category term="Web" />
+    
+    <category term="Development\]" />
     
   
 
-  <summary>리액트의 유즈 스테이트(useState) 훅을 깊이 있게 이해하기 위해, 실제 소스 코드를 통해 설명을 보완해보겠습니다.
+  <summary>리액트의 상태관리훅의 기본이 되는  useState훅을 깊이 있게 이해하는것이 이번 포스팅의 목적입니다.
 
-유즈 스테이트 (useState) 기본 예시
+useState 기본 예시
 
 리액트 컴포넌트에서 useState 훅을 사용하는 기본적인 예시는 다음과 같습니다.
 
@@ -57,7 +133,7 @@ function Counter() {
   return (
     &amp;amp;lt;div&amp;amp;gt;
       &amp;amp;lt;p&amp;amp;gt;You clicked {count} times&amp;amp;lt;/p&amp;amp;gt;
-      &amp;amp;lt;button onClick...</summary>
+      &amp;amp;lt;button onClick={() =&amp;amp;gt; setCount...</summary>
 
   </entry>
 
@@ -148,79 +224,6 @@ Electron 빌드 및 패키징
   &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,
   &amp;quot;main&amp;quot;: &amp;quot;main.js&amp;quot;,
   &amp;quot;scripts&amp;quot;: ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Jest로 테스트코드 작성하기: 상세 가이드와 예제 코드</title>
-    <link href="http://localhost:4000/posts/JEST%EB%A1%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-%EC%83%81%EC%84%B8-%EA%B0%80%EC%9D%B4%EB%93%9C%EC%99%80-%EC%98%88%EC%A0%9C-%EC%BD%94%EB%93%9C/" rel="alternate" type="text/html" title="Jest로 테스트코드 작성하기: 상세 가이드와 예제 코드" />
-    <published>2024-06-03T00:00:00+09:00</published>
-  
-    <updated>2024-06-03T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/JEST%EB%A1%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-%EC%83%81%EC%84%B8-%EA%B0%80%EC%9D%B4%EB%93%9C%EC%99%80-%EC%98%88%EC%A0%9C-%EC%BD%94%EB%93%9C/</id>
-    <content src="http://localhost:4000/posts/JEST%EB%A1%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-%EC%83%81%EC%84%B8-%EA%B0%80%EC%9D%B4%EB%93%9C%EC%99%80-%EC%98%88%EC%A0%9C-%EC%BD%94%EB%93%9C/" />
-    <author>
-      <name></name>
-    </author>
-
-  
-    
-  
-
-  <summary>layout: post
-title: “JEST로 테스트코드 작성하기: 상세 가이드와 예제 코드”
-date: 2024-06-03
-categories: [JavaScript, Testing]
-tags: [Jest, TDD]
-
-
-
-JavaScript 프로젝트에서 테스트를 작성하는 것은 코드의 품질을 유지하고, 예상치 못한 버그를 방지하는 데 중요한 역할을 합니다. Jest는 Facebook에서 개발한 JavaScript 테스팅 프레임워크로, 설정이 간단하고 다양한 기능을 제공하여 많은 개발자들이 애용하고 있습니다. 이번 블로그 글에서는 Jest를 사용하여 테스트 코드를 작성하는 방법을 자세히 설명하고, 풍부한 예제 코드로 그 과정을 보여드리겠습니다.
-
-1. Jest 설치하기
-
-먼저, Jest를 프로젝트에 설...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>리액트의 Reconciliation 과정 설명</title>
-    <link href="http://localhost:4000/posts/react-%EA%B0%80%EC%83%81%EB%8F%94%EC%9D%98-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/" rel="alternate" type="text/html" title="리액트의 Reconciliation 과정 설명" />
-    <published>2024-06-01T00:00:00+09:00</published>
-  
-    <updated>2024-06-01T00:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/react-%EA%B0%80%EC%83%81%EB%8F%94%EC%9D%98-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/</id>
-    <content src="http://localhost:4000/posts/react-%EA%B0%80%EC%83%81%EB%8F%94%EC%9D%98-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC/" />
-    <author>
-      <name></name>
-    </author>
-
-  
-    
-    <category term="React" />
-    
-    <category term="Frontend" />
-    
-  
-
-  <summary>리액트의 Reconciliation 과정에서는 변경된 부분만 실제 DOM에 반영됩니다. 주어진 코드에서 상태(state)가 변경되면 리액트는 Reconciliation 과정을 통해 변경된 부분만을 찾아서 업데이트합니다. 이를 Raw한 단계로 설명해보겠습니다.
-
-코드 예제: ParentComponent와 ChildComponent
-
-function ParentComponent() {
-  const [data, setData] = useState(&amp;quot;Initial data&amp;quot;);
-
-  const updateData = (newData) =&amp;amp;gt; {
-    setData(newData);
-  };
-
-  return (
-    &amp;amp;lt;div&amp;amp;gt;
-      &amp;amp;lt;ChildComponent data={data...</summary>
 
   </entry>
 
