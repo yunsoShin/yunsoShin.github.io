@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Frigate 설치 및 설정 가이드 (도커 사용)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-07T00:00:00+09:00","datePublished":"2024-08-07T00:00:00+09:00","description":"Frigate는 실시간 객체 감지 기능을 제공하는 NVR(Network Video Recorder) 오픈소스 소프트웨어입니다. 홈 어시스턴트와도 통합이 가능하여, 스마트 홈 시스템에서 비디오 감시를 효율적으로 관리할 수 있게 해줍니다. Frigate는 딥러닝을 활용하여 영상에서 사람, 차량 등의 객체를 실시간으로 감지하며, 이 모든 처리는 로컬에서 수행되어 개인 정보 보호에도 유리합니다.","headline":"Frigate 설치 및 설정 가이드 (도커 사용)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"},"url":"http://localhost:4000/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-09T22:19:03+09:00","datePublished":"2024-08-07T00:00:00+09:00","description":"Frigate는 실시간 객체 감지 기능을 제공하는 NVR(Network Video Recorder) 오픈소스 소프트웨어입니다. 홈 어시스턴트와도 통합이 가능하여, 스마트 홈 시스템에서 비디오 감시를 효율적으로 관리할 수 있게 해줍니다. Frigate는 딥러닝을 활용하여 영상에서 사람, 차량 등의 객체를 실시간으로 감지하며, 이 모든 처리는 로컬에서 수행되어 개인 정보 보호에도 유리합니다.","headline":"Frigate 설치 및 설정 가이드 (도커 사용)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"},"url":"http://localhost:4000/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -550,6 +550,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          업데이트
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1723209543"
+  data-df="YYYY/MM/DD"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  2024/08/09
+</time>
+
+        </span>
+      
 
       
 
@@ -570,7 +593,7 @@
   <li>한 개 이상의 IP 카메라 또는 네트워크에 연결된 카메라</li>
 </ul>
 
-<p>일단 첫번째로 도커를 다운로드 받습니다 .</p>
+<p>일단 첫번째로 도커를 다운로드 받습니다</p>
 
 <p><a href="https://www.docker.com/" target="_blank">도커 공식홈페이지</a></p>
 
@@ -588,21 +611,31 @@
 
 <h3><a href="https://yunsoshin.github.io/posts/Docker-compose%EB%9E%80/" target="_blank">docker-compose란?</a></h3>
 
-<h3 id="1-docker-이미지-다운로드"><span class="me-2">1. Docker 이미지 다운로드</span><a href="#1-docker-이미지-다운로드" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="1-깃허브에서-frigate-소스-가져오기"><span class="me-2">1. 깃허브에서 Frigate 소스 가져오기</span><a href="#1-깃허브에서-frigate-소스-가져오기" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>Frigate를 Docker를 사용하여 설치하려면 먼저 Frigate의 Docker 이미지를 다운로드합니다. 터미널을 열고 다음 명령어를 실행하세요:</p>
+<p>Frigate를 구성하시려면 일단은 깃허브에서 해당 소스를 다운로드받아야합니다.</p>
+
+<p><a href="https://github.com/blakeblackshear/frigate " target="_blank">도커 공식홈페이지</a></p>
 
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>docker pull blakeblackshear/frigate:stable
+</pre></td><td class="rouge-code"><pre>https://github.com/blakeblackshear/frigate.git
 </pre></td></tr></tbody></table></code></div></div>
 
-<p>이 명령어는 Frigate의 최신 안정 버전을 다운로드합니다.</p>
+<h3 id="2-디렉토리-설정"><span class="me-2">2. 디렉토리 설정</span><a href="#2-디렉토리-설정" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<h3 id="2-구성-파일-생성"><span class="me-2">2. 구성 파일 생성</span><a href="#2-구성-파일-생성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>Frigate는 <code class="language-plaintext highlighter-rouge">config.yml</code> 파일을 통해 다양한 설정을 관리합니다. 이 파일에는 카메라 설정, 객체 감지 설정 등이 포함됩니다. 예를 들어, 한 대의 카메라를 설정하는 기본 구성은 다음과 같습니다:</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nb">.</span>
+├── docker-compose.yml
+├── config/
+└── storage/
+</pre></td></tr></tbody></table></code></div></div>
 
 <div class="language-yaml highlighter-rouge"><div class="code-header">
         <span data-label-text="YAML"><i class="fas fa-code fa-fw small"></i></span>
@@ -827,14 +860,14 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Docker-compose%EB%9E%80/">Docker Compose란?</a>
+          <a href="/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/">Frigate 설치 및 설정 가이드 (도커 사용)</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/">Frigate 설치 및 설정 가이드 (도커 사용)</a>
+          <a href="/posts/Docker-compose%EB%9E%80/">Docker Compose란?</a>
         </li>
       
         

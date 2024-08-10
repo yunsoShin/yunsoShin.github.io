@@ -16,7 +16,7 @@ Frigate는 실시간 객체 감지 기능을 제공하는 NVR(Network Video Reco
 - Docker Compose (선택사항, Docker Compose를 사용하는 경우)
 - 한 개 이상의 IP 카메라 또는 네트워크에 연결된 카메라
 
-일단 첫번째로 도커를 다운로드 받습니다 .
+일단 첫번째로 도커를 다운로드 받습니다
 
 <a href="https://www.docker.com/" target="_blank">도커 공식홈페이지</a>
 
@@ -30,19 +30,25 @@ Frigate는 실시간 객체 감지 기능을 제공하는 NVR(Network Video Reco
 
 <h3><a href="https://yunsoshin.github.io/posts/Docker-compose%EB%9E%80/" target="_blank">docker-compose란?</a></h3>
 
-### 1. Docker 이미지 다운로드
+### 1. 깃허브에서 Frigate 소스 가져오기
 
-Frigate를 Docker를 사용하여 설치하려면 먼저 Frigate의 Docker 이미지를 다운로드합니다. 터미널을 열고 다음 명령어를 실행하세요:
+Frigate를 구성하시려면 일단은 깃허브에서 해당 소스를 다운로드받아야합니다.
+
+<a href="https://github.com/blakeblackshear/frigate
+" target="_blank">도커 공식홈페이지</a>
 
 ```bash
-docker pull blakeblackshear/frigate:stable
+https://github.com/blakeblackshear/frigate.git
 ```
 
-이 명령어는 Frigate의 최신 안정 버전을 다운로드합니다.
+### 2. 디렉토리 설정
 
-### 2. 구성 파일 생성
-
-Frigate는 `config.yml` 파일을 통해 다양한 설정을 관리합니다. 이 파일에는 카메라 설정, 객체 감지 설정 등이 포함됩니다. 예를 들어, 한 대의 카메라를 설정하는 기본 구성은 다음과 같습니다:
+```bash
+.
+├── docker-compose.yml
+├── config/
+└── storage/
+```
 
 ```yaml
 cameras:
