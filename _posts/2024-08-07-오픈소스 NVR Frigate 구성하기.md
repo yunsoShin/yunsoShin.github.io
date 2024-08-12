@@ -50,41 +50,28 @@ https://github.com/blakeblackshear/frigate.git
 └── storage/
 ```
 
-```yaml
-cameras:
-  front_door:
-    ffmpeg:
-      inputs:
-        - path: rtsp://your-camera-ip/rtsp-stream-url
-          roles:
-            - detect
-            - rtmp
-    width: 1920
-    height: 1080
-    fps: 5
-```
-
 ### 3. Docker Compose 파일 작성
 
 Docker Compose를 사용하여 Frigate를 실행하려면 `docker-compose.yml` 파일을 작성해야 합니다. 다음은 기본적인 Docker Compose 구성의 예시입니다:
 
 ```yaml
-version: "3.6"
+version: "3.9"
 services:
   frigate:
     container_name: frigate
     restart: unless-stopped
-    image: blakeblackshear/frigate:stable
-    ports:
-      - "5000:5000" # Web UI
-      - "1935:1935" # RTMP 서비스
+    image: ghcr.io/blakeblackshear/frigate:stable
     volumes:
-      - /path/to/config.yml:/config/config.yml
-      - /path/to/clips:/media/frigate/clips
-      - /path/to/recordings:/media/frigate/recordings
-      - /etc/localtime:/etc/localtime:ro
-    environment:
-      FRIGATE_RTSP_PASSWORD: "your_rtsp_password_here"
+      - ./config:/config
+      - ./storage:/media/frigate
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1000000000
+    ports:
+      - "8971:8971"
+      - "8554:8554" # RTSP feeds
+
 ```
 
 ### 4. Frigate 실행
@@ -97,6 +84,18 @@ docker-compose up -d
 
 ### 5. 웹 인터페이스 접근
 
-Frigate가 실행되면, 웹 브라우저를 통해 `http://<your-server-ip>:5000` 주소로 접속할 수 있습니다. 여기에서 실시간 비디오 스트림을 볼 수 있고, 감지된 객체의 이벤트와 기록도 확인할 수 있습니다.
+Frigate가 실행되면, 웹 브라우저를 통해 `https://<your-server-ip>:8971` 혹은 `https://localhost:8971`
+주소로 접속할 수 있습니다. 여기에서 실시간 비디오 스트림을 볼 수 있고, 감지된 객체의 이벤트와 기록도 확인할 수 있습니다.
+
+
+
+접속에 성고했다면 로그인 페이지가 나올텐데 , 해당 페이지의 초기설정값은
+`docker logs frigate` 의 명령어로 찾을 수 있습니다
+
+
+로그인에 성공한 이후 좌측하단의 설정 톱니바퀴를 눌러 Configuration editor에서 카메라 설정을 변경할 수 있습니다.
+자세한 문서는 아래의 글을 확인해 주세요
+
+
 
 기본적으로 도커내의 환경에서 구동되는 NVR을 만나 볼 수 있을겁니다.
