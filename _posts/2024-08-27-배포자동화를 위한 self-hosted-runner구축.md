@@ -208,7 +208,7 @@ jobs:
 
       - name: SSH and Execute Deploy Script
         run: |
-          ssh -i /home/runner/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'bash /Users/sin-yunsu/Documents/GitHub/ADDD-Link/deploy.sh'
+          ssh -i /home/runner/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'bash /Users/sin-yunsu/Documents/GitHub/레포/deploy.sh'
         env:
           SSH_USER: ${{ secrets.SSH_USER }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
