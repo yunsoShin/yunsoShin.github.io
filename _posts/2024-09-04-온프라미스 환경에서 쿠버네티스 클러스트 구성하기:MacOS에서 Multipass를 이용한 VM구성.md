@@ -1,14 +1,18 @@
+해당 블로그 글에서 Docker 설치 및 테스트 과정을 추가하여 수정해보겠습니다.
+
 ---
-layout: post
-title: "온프라미스 환경에서 쿠버네티스 클러스터 구성하기: macOS에서 Multipass를 이용한 우분투 VM 설정"
-date: 2024-09-04
-categories: kubernetes
-tags: [kubernetes, VM]
+
+layout: post  
+title: "온프라미스 환경에서 쿠버네티스 클러스터 구성하기: macOS에서 Multipass를 이용한 우분투 VM 설정"  
+date: 2024-09-04  
+categories: kubernetes  
+tags: [kubernetes, VM, Docker]
+
 ---
 
 ### 온프라미스 환경에서 쿠버네티스 클러스터 구성하기: macOS에서 Multipass를 이용한 우분투 VM 설정
 
-온프라미스 환경에서 쿠버네티스(Kubernetes) 클러스터를 구성하는 것은 클라우드 환경에서의 설정과는 다른 경험을 제공합니다. 특히, macOS 환경에서 Multipass를 활용하여 쿠버네티스 클러스터를 설정하는 과정은 실제 프로덕션 환경과 유사한 환경을 구현하는 데 큰 도움이 됩니다. 이번 글에서는 Multipass를 이용하여 Ubuntu 가상 머신(VM)을 설정하고, 쿠버네티스를 설치하는 방법을 소개합니다.
+온프라미스 환경에서 쿠버네티스(Kubernetes) 클러스터를 구성하는 것은 클라우드 환경에서의 설정과는 다른 경험을 제공합니다. 특히, macOS 환경에서 Multipass를 활용하여 쿠버네티스 클러스터를 설정하는 과정은 실제 프로덕션 환경과 유사한 환경을 구현하는 데 큰 도움이 됩니다. 이번 글에서는 Multipass를 이용하여 Ubuntu 가상 머신(VM)을 설정하고, Docker를 설치한 후, 쿠버네티스를 설치하는 방법을 소개합니다.
 
 #### 1. Multipass 설치
 
@@ -43,16 +47,52 @@ VM이 생성된 후, 아래 명령어를 통해 `ubuntu-k8s` VM에 접속합니�
 multipass shell ubuntu-k8s
 ```
 
-이제 Ubuntu 환경에 접속한 상태로, 여기서부터는 쿠버네티스 설치와 관련된 작업을 진행할 수 있습니다.
+이제 Ubuntu 환경에 접속한 상태로, 여기서부터는 Docker 설치와 관련된 작업을 진행할 수 있습니다.
 
-#### 4. 쿠버네티스 설치 및 설정
+#### 4. Docker 설치 및 테스트
 
-VM 내부에 접속했으므로, 이제 쿠버네티스를 설치할 차례입니다. 먼저 필수 패키지들을 설치하고, 쿠버네티스를 설치하기 위한 설정을 진행합니다.
+쿠버네티스를 설치하기 전에, 먼저 Docker를 설치하여 환경이 올바르게 구성되었는지 확인해야 합니다. Docker는 쿠버네티스에서 컨테이너를 관리하는 데 필수적인 도구입니다.
 
 ```bash
-# 패키지 업데이트
-sudo apt-get update
+# 기존 도커 삭제
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+```
 
+```bash
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+
+혹은 최신버전의 도커와 우분투를 다운로드하여 실행한다는 가정하에는 아래와 같은 명령어를 이용할 수 있습니다
+
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+#### 테스트
+
+```bash
+sudo docker run hello-world
+```
+
+위 명령어를 실행하면 Docker가 올바르게 설치되었는지 확인할 수 있습니다. `hello-world` 컨테이너가 정상적으로 실행되면, Docker가 성공적으로 설치된 것입니다.
+
+#### 5. 쿠버네티스 설치 및 설정
+
+Docker가 정상적으로 설치된 후, 이제 쿠버네티스를 설치할 차례입니다. 먼저 필수 패키지들을 설치하고, 쿠버네티스를 설치하기 위한 설정을 진행합니다.
+
+```bash
 # 쿠버네티스 설치를 위한 필수 패키지 설치
 sudo apt-get install -y apt-transport-https ca-certificates curl
 
@@ -69,7 +109,7 @@ sudo systemctl enable kubelet
 sudo systemctl start kubelet
 ```
 
-#### 5. 쿠버네티스 클러스터 초기화
+#### 6. 쿠버네티스 클러스터 초기화
 
 이제 클러스터를 초기화합니다. 아래 명령어를 통해 마스터 노드를 초기화합니다.
 
@@ -85,7 +125,7 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-#### 6. 네트워크 플러그인 설치
+#### 7. 네트워크 플러그인 설치
 
 쿠버네티스에서 Pod들이 통신할 수 있도록 네트워크 플러그인을 설치해야 합니다. 여기서는 `Weave Net`을 사용합니다.
 
@@ -93,7 +133,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f https://git.io/weave-kube-1.6
 ```
 
-#### 7. 클러스터 상태 확인
+#### 8. 클러스터 상태 확인
 
 설치가 완료된 후, 다음 명령어를 통해 쿠버네티스 클러스터의 상태를 확인할 수 있습니다.
 
@@ -103,6 +143,6 @@ kubectl get nodes
 
 모든 노드가 `Ready` 상태로 표시되면, 쿠버네티스 클러스터가 정상적으로 설정된 것입니다.
 
-### 결론
+이번 글에서는 macOS에서 Multipass를 이용해 Ubuntu VM을 생성하고, Docker를 설치한 후, 쿠버네티스를 설치하는 과정을 다루었습니다. 이를 통해 온프라미스 환경에서의 쿠버네티스 설정 과정을 체험해볼 수 있습니다. 이 과정을 바탕으로 다양한 쿠버네티스 구성 및 테스트를 진행해볼 수 있을 것입니다.
 
-이번 글에서는 macOS에서 Multipass를 이용해 Ubuntu VM을 생성하고, 쿠버네티스를 설치하는 과정을 다루었습니다. 이를 통해 온프라미스 환경에서의 쿠버네티스 설정 과정을 체험해볼 수 있습니다. 이 과정을 바탕으로 다양한 쿠버네티스 구성 및 테스트를 진행해볼 수 있을 것입니다.
+---
