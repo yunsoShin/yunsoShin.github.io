@@ -42,7 +42,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Frigate 설치 및 설정 가이드 (도커 사용)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-09T22:19:03+09:00","datePublished":"2024-08-07T00:00:00+09:00","description":"Frigate는 실시간 객체 감지 기능을 제공하는 NVR(Network Video Recorder) 오픈소스 소프트웨어입니다. 홈 어시스턴트와도 통합이 가능하여, 스마트 홈 시스템에서 비디오 감시를 효율적으로 관리할 수 있게 해줍니다. Frigate는 딥러닝을 활용하여 영상에서 사람, 차량 등의 객체를 실시간으로 감지하며, 이 모든 처리는 로컬에서 수행되어 개인 정보 보호에도 유리합니다.","headline":"Frigate 설치 및 설정 가이드 (도커 사용)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"},"url":"http://localhost:4000/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-08-12T22:08:24+09:00","datePublished":"2024-08-07T00:00:00+09:00","description":"Frigate는 실시간 객체 감지 기능을 제공하는 NVR(Network Video Recorder) 오픈소스 소프트웨어입니다. 홈 어시스턴트와도 통합이 가능하여, 스마트 홈 시스템에서 비디오 감시를 효율적으로 관리할 수 있게 해줍니다. Frigate는 딥러닝을 활용하여 영상에서 사람, 차량 등의 객체를 실시간으로 감지하며, 이 모든 처리는 로컬에서 수행되어 개인 정보 보호에도 유리합니다.","headline":"Frigate 설치 및 설정 가이드 (도커 사용)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"},"url":"http://localhost:4000/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -562,13 +562,13 @@
 
 <time
   
-  data-ts="1723209543"
+  data-ts="1723468104"
   data-df="YYYY/MM/DD"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  2024/08/09
+  2024/08/12
 </time>
 
         </span>
@@ -637,32 +637,6 @@
 └── storage/
 </pre></td></tr></tbody></table></code></div></div>
 
-<div class="language-yaml highlighter-rouge"><div class="code-header">
-        <span data-label-text="YAML"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="복사되었습니다!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="rouge-code"><pre><span class="na">cameras</span><span class="pi">:</span>
-  <span class="na">front_door</span><span class="pi">:</span>
-    <span class="na">ffmpeg</span><span class="pi">:</span>
-      <span class="na">inputs</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="na">path</span><span class="pi">:</span> <span class="s">rtsp://your-camera-ip/rtsp-stream-url</span>
-          <span class="na">roles</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="s">detect</span>
-            <span class="pi">-</span> <span class="s">rtmp</span>
-    <span class="na">width</span><span class="pi">:</span> <span class="m">1920</span>
-    <span class="na">height</span><span class="pi">:</span> <span class="m">1080</span>
-    <span class="na">fps</span><span class="pi">:</span> <span class="m">5</span>
-</pre></td></tr></tbody></table></code></div></div>
-
 <h3 id="3-docker-compose-파일-작성"><span class="me-2">3. Docker Compose 파일 작성</span><a href="#3-docker-compose-파일-작성" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <p>Docker Compose를 사용하여 Frigate를 실행하려면 <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> 파일을 작성해야 합니다. 다음은 기본적인 Docker Compose 구성의 예시입니다:</p>
@@ -685,22 +659,24 @@
 14
 15
 16
-</pre></td><td class="rouge-code"><pre><span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.6"</span>
+17
+</pre></td><td class="rouge-code"><pre><span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.9"</span>
 <span class="na">services</span><span class="pi">:</span>
   <span class="na">frigate</span><span class="pi">:</span>
     <span class="na">container_name</span><span class="pi">:</span> <span class="s">frigate</span>
     <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
-    <span class="na">image</span><span class="pi">:</span> <span class="s">blakeblackshear/frigate:stable</span>
-    <span class="na">ports</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">5000:5000"</span> <span class="c1"># Web UI</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">1935:1935"</span> <span class="c1"># RTMP 서비스</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">ghcr.io/blakeblackshear/frigate:stable</span>
     <span class="na">volumes</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">/path/to/config.yml:/config/config.yml</span>
-      <span class="pi">-</span> <span class="s">/path/to/clips:/media/frigate/clips</span>
-      <span class="pi">-</span> <span class="s">/path/to/recordings:/media/frigate/recordings</span>
-      <span class="pi">-</span> <span class="s">/etc/localtime:/etc/localtime:ro</span>
-    <span class="na">environment</span><span class="pi">:</span>
-      <span class="na">FRIGATE_RTSP_PASSWORD</span><span class="pi">:</span> <span class="s2">"</span><span class="s">your_rtsp_password_here"</span>
+      <span class="pi">-</span> <span class="s">./config:/config</span>
+      <span class="pi">-</span> <span class="s">./storage:/media/frigate</span>
+      <span class="pi">-</span> <span class="na">type</span><span class="pi">:</span> <span class="s">tmpfs</span> <span class="c1"># Optional: 1GB of memory, reduces SSD/SD Card wear</span>
+        <span class="na">target</span><span class="pi">:</span> <span class="s">/tmp/cache</span>
+        <span class="na">tmpfs</span><span class="pi">:</span>
+          <span class="na">size</span><span class="pi">:</span> <span class="m">1000000000</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">8971:8971"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">8554:8554"</span> <span class="c1"># RTSP feeds</span>
+
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="4-frigate-실행"><span class="me-2">4. Frigate 실행</span><a href="#4-frigate-실행" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -715,7 +691,14 @@
 
 <h3 id="5-웹-인터페이스-접근"><span class="me-2">5. 웹 인터페이스 접근</span><a href="#5-웹-인터페이스-접근" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
-<p>Frigate가 실행되면, 웹 브라우저를 통해 <code class="language-plaintext highlighter-rouge">http://&lt;your-server-ip&gt;:5000</code> 주소로 접속할 수 있습니다. 여기에서 실시간 비디오 스트림을 볼 수 있고, 감지된 객체의 이벤트와 기록도 확인할 수 있습니다.</p>
+<p>Frigate가 실행되면, 웹 브라우저를 통해 <code class="language-plaintext highlighter-rouge">https://&lt;your-server-ip&gt;:8971</code> 혹은 <code class="language-plaintext highlighter-rouge">https://localhost:8971</code>
+주소로 접속할 수 있습니다. 여기에서 실시간 비디오 스트림을 볼 수 있고, 감지된 객체의 이벤트와 기록도 확인할 수 있습니다.</p>
+
+<p>접속에 성고했다면 로그인 페이지가 나올텐데 , 해당 페이지의 초기설정값은
+<code class="language-plaintext highlighter-rouge">docker logs frigate</code> 의 명령어로 찾을 수 있습니다</p>
+
+<p>로그인에 성공한 이후 좌측하단의 설정 톱니바퀴를 눌러 Configuration editor에서 카메라 설정을 변경할 수 있습니다.
+자세한 문서는 아래의 글을 확인해 주세요</p>
 
 <p>기본적으로 도커내의 환경에서 구동되는 NVR을 만나 볼 수 있을겁니다.</p>
 
@@ -860,35 +843,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-NVR-Frigate-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/">Frigate 설치 및 설정 가이드 (도커 사용)</a>
+          <a href="/posts/NestJS%EC%97%90%EC%84%9C-Kafka%EC%99%80-Avro%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%8A%A4%ED%8A%B8%EB%A6%AC%EB%B0%8D-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/">Nestjs에서 kafka와 avro를 이용한 데이터 스트리밍 구축하기</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/Docker-compose%EB%9E%80/">Docker Compose란?</a>
+          <a href="/posts/%EC%B0%A8%EA%B8%B0-%EC%B6%94%EC%B2%9C%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%8F%84%EC%9E%85-%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90-%EA%B8%B0%EC%B4%88/">차기 추천시스템도입 아키텍쳐 기초</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/%EB%A6%AC%EC%95%A1%ED%8A%B8%EC%9D%98-useState%ED%9B%85%EC%9D%84-%EA%B9%8A%EC%9D%B4-%EC%9E%88%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/">리액트의 useState훅을 깊이 있게 이해하기</a>
+          <a href="/posts/%EC%B9%B4%ED%94%84%EC%B9%B4-%EA%B8%B0%EB%B3%B8%EC%9D%B4%ED%95%B4/">카프카 기본이해</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/%EC%9D%BC%EB%A0%89%ED%8A%B8%EB%A1%A0-CICD-%EC%9B%90%EA%B2%A9%EB%B2%84%EC%A0%84%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8/">일렉트론(Electron) 앱의 CI/CD 배포 및 원격 업데이트 기능 추가 방법</a>
+          <a href="/posts/%EC%B9%B4%ED%94%84%EC%B9%B4-%EC%8A%A4%ED%83%80%ED%84%B0%ED%8C%A9-%EB%AA%A8%EB%93%88-%EA%B5%AC%EC%84%B1/">카프카 스타터팩 모듈 구성</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/NestJS%EC%99%80-Angular-%EC%B2%A0%ED%95%99%EA%B3%BC-%EC%84%A4%EA%B3%84%EC%9D%98-%EC%9C%A0%EC%82%AC%EC%84%B1/">NestJS와 Angular: 철학과 설계의 유사성</a>
+          <a href="/posts/%EC%B9%B4%ED%94%84%EC%B9%B4-%EC%BB%A4%EC%8A%A4%ED%85%80%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/">카프카 커스텀파티셔닝</a>
         </li>
       
     </ul>

@@ -1,7 +1,3 @@
-아래는 NestJS에서 Kafka와 Avro를 사용해 다양한 데이터를 직렬화하여 전송하고, 수신된 데이터를 처리하는 예제를 포함한 블로그 글 형식의 작성 예시입니다.
-
----
-
 # NestJS에서 Kafka와 Avro를 이용한 데이터 스트리밍 구축하기
 
 데이터가 분산되고 실시간으로 처리가 필요한 시스템에서 **Kafka**와 **Avro**를 결합해 메시징 시스템을 구축하는 것은 효율적이고 확장 가능한 선택입니다. 이 글에서는 **NestJS**와 **Kafka**, 그리고 **Confluent Schema Registry**를 사용하여 Avro 직렬화를 구현하고, 이를 통해 다양한 데이터 구조를 안전하고 일관되게 처리하는 방법을 설명합니다.
@@ -278,80 +274,6 @@ export class AppModule {}
 
 ---
 
-## 결론
-
 NestJS에서 Kafka와 Avro를 사용해 데이터 스트리밍 시스템을 구축하는 방법을 살펴보았습니다. **Schema Registry**를 이용해 다양한 데이터를 일관된 스키마로 관리하고, Kafka를 통해 실시간으로 데이터를 전송, 수신하는 시스템을 구현할 수 있습니다.
 
 각 `acks` 옵션에 따른 플로우차트를 Markdown의 Mermaid 형식으로 도식화해 보겠습니다.
-
----
-
-### Kafka `acks` 옵션 플로우차트
-
-#### `acks=0` : 프로듀서는 리더에게 쓰기 후 확인을 기다리지 않음
-
-````markdown
-```mermaid
-flowchart TD
-    A[Producer] -->|Send Data| B[Leader]
-    B -->|No Confirmation| C[Producer]
-    B -->|No Feedback on Success or Replica Status| D[Replicas]
-
-    subgraph Acks=0 Flow
-        A
-        B
-        C
-        D
-    end
-```
-````
-
-````
-
----
-
-#### `acks=1` : 프로듀서는 리더 브로커의 확인만 기다림
-
-```markdown
-```mermaid
-flowchart TD
-    A[Producer] -->|Send Data| B[Leader]
-    B -->|Confirm Write Success| C[Producer]
-    B -->|Replicates to Followers| D[Replicas]
-
-    subgraph Acks=1 Flow
-        A
-        B
-        C
-        D
-    end
-````
-
-````
-
----
-
-#### `acks=all` 또는 `acks=-1` : 모든 레플리카의 확인을 기다림
-
-```markdown
-```mermaid
-flowchart TD
-    A[Producer] -->|Send Data| B[Leader]
-    B -->|Replicates to All Followers| D[Replicas]
-    D -->|Confirm Success from All Replicas| B
-    B -->|Confirm Write Success| C[Producer]
-
-    subgraph Acks=All Flow
-        A
-        B
-        C
-        D
-    end
-````
-
-```
-
----
-
-이 도표들은 각 `acks` 설정에 따라 프로듀서가 데이터를 리더에 전송한 후의 흐름을 시각화한 것입니다. `acks=0`은 성공 여부를 확인하지 않으며, `acks=1`은 리더만 확인하고, `acks=all`은 모든 레플리카의 성공을 확인합니다.
-```
